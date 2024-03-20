@@ -1,0 +1,6 @@
+baseURL: https://github.com/phyphox/expdb-generator/
+params:
+  contact:
+    name: II. Lehrstuhl für Physik, RWTH Aachen
+    email:
+    phone:

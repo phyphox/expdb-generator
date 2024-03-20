@@ -1,0 +1,26 @@
+defaultContentLanguage: de
+defaultContentLanguageInSubdir: true
+
+languages:
+  de:
+    disabled: false
+    languageCode: de-DE
+    languageDirection: ltr
+    languageName: Deutsch
+    params:
+      subtitle: Die offizielle Sammlung von Ressourcen für Phyphox-Experimente.
+    title: Phyphox Experimente Datenbank Prototyp
+    weight: 21
+
+  en:
+    disabled: false
+    languageCode: en-US
+    languageDirection: ltr
+    languageName: English
+    params:
+      subtitle: The Official Database For Various Phyphox Experiment Resources.
+    title: Phyphox Data Management Prototype
+    weight: 42
+
+  # all new languages should have a weight <21 as hugo uses the weight to decide which language to use as fallback and
+  # the chances are high that English & German will get the most support.

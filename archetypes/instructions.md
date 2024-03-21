@@ -1,10 +1,10 @@
 ---
-title: {{ .title }}
+title: string
 date: Date
-last_mod: {{ .Date }}
-author: {{ .Name }}
+last_mod: '{{ .Now.Date }}'
+author:
 taxonomies:
   target_group: ISO...
-  difficulty: 
+  difficulty: enum 
 draft: true
 ---

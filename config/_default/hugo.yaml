@@ -1,6 +1,33 @@
-baseURL: https://github.com/phyphox/expdb-generator/
+baseURL: # https://github.com/phyphox/expdb-generator/
 params:
   contact:
     name: II. Lehrstuhl für Physik, RWTH Aachen
     email:
     phone:
+
+defaultContentLanguage: de
+defaultContentLanguageInSubdir: true
+
+languages:
+  de:
+    disabled: false
+    languageCode: de-DE
+    languageDirection: ltr
+    languageName: Deutsch
+    params:
+      subtitle: Die offizielle Sammlung von Ressourcen für Phyphox-Experimente.
+    title: Phyphox Datenbank Prototyp
+    weight: 2
+
+  en:
+    disabled: false
+    languageCode: en-US
+    languageDirection: ltr
+    languageName: English
+    params:
+      subtitle: The Official Database For Various Phyphox Experiment Resources.
+    title: Phyphox Database Prototype
+    weight: 1
+
+  # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;
+  # it is probable that English & German will get the most support.

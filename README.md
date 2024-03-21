@@ -6,19 +6,18 @@ The easiest way to use this database is to visit the [Phyphox]() website where t
 
 If you are not pleased with the layout of the resources, you can find the templates within the `/static/` directory. You can pull and edit the template of your desired output format locally and use Pandoc (or a Tex-Compiler) to create new output from the Markdown files. Likewise, you can edit the Markdown files if you are unsatisfied with or critical of their content. If you think others share your view or preference, feel free to contribute.
 
-If you want to add language support to the website (not the database), take a look inside `/config/_default/` and follow the examples given.
+If you want to add language support please contact the Phyphox Team. You can get added to the [GitLocalizer]() project to easily contribute your translations (a Git account is required). 
 
-If you would like to add instructions, worksheets, etc. to the database, please refer to the [standards]() and given examples.
-
-Please send your contributions to the [Phyphox Team](mailto:) where they can be checked for their usage and implementation accordingly.
+If you would like to add new instructions, worksheets, etc. to the database, please refer to the [standards]() and given examples and send your contributions to the [Phyphox Team](mailto:) where they can be checked and implemented accordingly.
 
 ## Setup
 This program uses:
-- [Hugo](https://gohugo.io) for the creation of HTML code & the website
-- [Pandoc]() to export the Markdown code to other formats, namely `.pdf, .tex, .odt, .word`
+- [Hugo](https://gohugo.io) for the creation of the website
+- [Pandoc](https://pandoc.org/) to export the Markdown code to other formats, namely `.pdf, .tex, .odt, .docx`
 - [Minisearch](https://github.com/lucaong/minisearch) to offer a searchbar
-<!-- You need to use: `hugo --config hugo.yaml,lang.yaml` -->
 
-The structure of the database is built upon the Hugo basis. Within the `/content/` directories are the Markdown files which allow for the display of the content within the browser.
+The structure of the database is built upon the Hugo basis. Within the `/content/` directories are the Markdown files which allows for the display of the content within the browser.
 
 Within the `/static/` directories are the templates for Pandoc; All output is stored in `/data/`.
+
+When you want to start the page up you need to use You need to use: `hugo server --config hugo.yaml,lang.yaml`

@@ -6,3 +6,5 @@
   translation: "Overview"
 - id: translations
   translation: "Translations"
+- id: skipToMainContent
+  translation: "Skip to Main Content"

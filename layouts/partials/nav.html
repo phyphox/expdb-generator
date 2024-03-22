@@ -6,7 +6,7 @@
 </nav>
 
 {{ if .IsTranslated }}
-<h4>{{ i18n "translations" }}</h4>
+<nav>{{ i18n "translations" }}
 <ul>
     {{ range .Translations }}
     <li>
@@ -14,6 +14,7 @@
     </li>
     {{ end }}
 </ul>
+</nav>
 {{ end }}
 
 <!-- {{ if .IsTranslated }}

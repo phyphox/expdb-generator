@@ -5,9 +5,14 @@
 </head>
 
 <body>
+    <!-- The following jump link is implemented as part of complying to the WCAG standard. Please refer to the standard at any given point when working on this project -->
+    <a href="#maincontent">{{ i18n "skipToMainContent" }}</a>
+    <!-- In the long run this shall be hidden via CSS until called upon by using the tabulator key -->
     {{partial "nav.html" . }}
-    {{block "main" .}}
-    {{end}}
+    <main id="maincontent">
+        {{block "main" .}}
+        {{end}}
+    </main>
     {{partial "footer.html" . }}
 </body>
 </html>

@@ -1,8 +1,8 @@
-- id: Home
+- id: home
   translation: "Home"
-- id: Instructions
+- id: instructions
   translation: "Instructions"
-- id: Overview
+- id: overview
   translation: "Overview"
 - id: translations
   translation: "Translations"

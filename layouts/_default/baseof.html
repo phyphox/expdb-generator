@@ -9,7 +9,6 @@
     <a href="#maincontent">{{ i18n "skipToMainContent" }}</a>
     <!-- In the long run this shall be hidden via CSS until called upon by using the tabulator key -->
     {{partial "nav.html" . }}
-    {{partial "filter.html" .}}
     <main id="maincontent">
         {{block "main" .}}
         {{end}}

@@ -2,6 +2,6 @@
 <!-- No footer here! -->
 {{ else }}
 <footer>
-    Phyphox Database, 2024-{{ now.Year }}
+    Phyphox {{ i18n "database" }}, 2024{{if ne ($y := now.Year)  2024 }}{{print "-" $y }}{{end}}
 </footer>
 {{ end }}

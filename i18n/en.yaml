@@ -8,3 +8,7 @@
   translation: "Translations"
 - id: skipToMainContent
   translation: "Skip to Main Content"
+- id: filter
+  translation: "Filter"
+- id: database
+  translation: "database"

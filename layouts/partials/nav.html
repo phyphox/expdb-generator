@@ -1,12 +1,12 @@
 <nav class="CategoryNav">
     <ul>
-        <li><a href="/{{ .Language.Lang }}/">{{ i18n "Home" }}</a></li>
-        <li><a href="/{{ .Language.Lang }}/instructions/">{{ i18n "Instructions" }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/">{{ i18n "home" }}</a></li>
+        <li><a href="/{{ .Language.Lang }}/instructions/">{{ i18n "instructions" }}</a></li>
     </ul>
 </nav>
 
 {{ if .IsTranslated }}
-<nav>{{ i18n "translations" }}
+<nav class="LanguageNav">{{ i18n "translations" }}
 <ul>
     {{ range .Translations }}
     <li>
@@ -16,11 +16,3 @@
 </ul>
 </nav>
 {{ end }}
-
-<!-- {{ if .IsTranslated }}
-<nav class="LangNav">
-    {{ range .AllTranslations }}
-    <a href="{{ .Permalink }}">{{ .Language.LanguageName }}</a>
-    {{ end}}
-</nav>
-{{ end }} -->

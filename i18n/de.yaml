@@ -1,10 +1,14 @@
-- id: Home
+- id: home
   translation: "Start"
-- id: Instructions
+- id: instructions
   translation: "Anleitungen"
-- id: Overview
+- id: overview
   translation: "Übersicht"
 - id: translations
   translation: "Übersetzungen"
 - id: skipToMainContent
   translation: "Zum Inhalt springen"
+- id: filter
+  translation: "Filter"
+- id: database
+  translation: "Datenbank"

@@ -1,6 +1,6 @@
-{{ define "main" }}
-<h1>{{ .Params.Title }}</h1>
-<p>{{ .Params.Author }}, {{ .Date | time.Format ":date_medium" }}</p>
-<hr />
-{{ .Content }}
-{{ end }}
+{{- define "main" -}}
+    <h1>{{- .Params.Title -}}</h1>
+    <p>{{- .Params.Author -}}, {{- .Date | time.Format ":date_medium" -}}</p>
+    <hr />
+    {{- .Content -}}
+{{- end -}}

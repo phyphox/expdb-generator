@@ -1,11 +1,11 @@
-{{ define "main" }}
-    <h2>{{ i18n "overview" }}</h2>
+{{- define "main" -}}
+    <h2>{{- i18n "overview" -}}</h2>
 
     <ul>
-        {{ range .Pages }}
+        {{- range .Pages -}}
         <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "January 2, 2006" }}
+            <a href="{{- .Permalink -}}">{{- .Title -}}</a> - {{- .Date.Format "January 2, 2006" -}}
         </li>
-        {{ end }}
+        {{- end -}}
     </ul>
-{{ end }}
+{{- end -}}

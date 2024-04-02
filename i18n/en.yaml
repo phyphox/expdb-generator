@@ -6,9 +6,20 @@
   translation: "Overview"
 - id: translations
   translation: "Translations"
+- id: wordCount
+  translation: "word count"
 - id: skipToMainContent
   translation: "Skip to Main Content"
 - id: filter
   translation: "Filter"
 - id: database
   translation: "database"
+- id: website
+  translation: "Website"
+- id: description
+  translation: "Description"
+
+- id: linkTo_Domains_of_Physics
+  translation: "To overview 'Domains of Physics'"
+- id: logo_Domains_of_Physics
+  translation: "symbolic logo"

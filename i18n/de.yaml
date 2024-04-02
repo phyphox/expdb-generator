@@ -6,9 +6,20 @@
   translation: "Übersicht"
 - id: translations
   translation: "Übersetzungen"
+- id: wordCount
+  translation: "Wörter"
 - id: skipToMainContent
   translation: "Zum Inhalt springen"
 - id: filter
   translation: "Filter"
 - id: database
   translation: "Datenbank"
+- id: website
+  translation: "Webseite"
+- id: description
+  translation: "Beschreibung"
+
+- id: linkTo_Domains_of_Physics
+  translation: 'Zur Übersicht "Bereiche der Physik"'
+- id: logo_Domains_of_Physics
+  translation: "Symbolbild"

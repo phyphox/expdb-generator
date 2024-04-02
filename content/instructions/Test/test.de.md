@@ -3,14 +3,9 @@ title: Testlauf
 date: '2024-03-20T14:15:05+01:00'
 last_mod: '2024-03-20T14:15:05+01:00'
 author: "Marcel Kaiser"
-taxonomies:
-  target_group: ISO...
-  difficulty: easy
+Domains_of_Physics:
+  - Test
 draft: true
-tags:
-  - test
-  - isItWorking
-  - theAnswerToTheUniverseAndEverything
 ---
 
 ## Am Anfang ...

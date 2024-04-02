@@ -5,14 +5,14 @@
     </ul>
 </nav>
 
-{{ if .IsTranslated }}
-<nav class="LanguageNav">{{ i18n "translations" }}
+{{- if .IsTranslated -}}
+<nav class="LanguageNav">{{- i18n "translations" -}}
 <ul>
-    {{ range .Translations }}
+    {{- range .Translations -}}
     <li>
-        <a href="{{ .RelPermalink }}">{{ .Language.Lang }}: {{ .LinkTitle }}<!-- {{ if .IsPage }} ({{ i18n "wordCount" . }}) {{ end }} --></a>
+        <a href="{{ .RelPermalink }}">{{- .Language.Lang -}}: {{- .LinkTitle -}}{{- if .IsPage -}} ({{- i18n "wordCount" . -}}) {{- end -}}</a>
     </li>
-    {{ end }}
+    {{- end -}}
 </ul>
 </nav>
-{{ end }}
+{{- end -}}

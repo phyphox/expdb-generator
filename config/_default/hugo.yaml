@@ -8,17 +8,13 @@ params:
 defaultContentLanguage: de
 defaultContentLanguageInSubdir: true
 
-languages:
-  de:
-    disabled: false
-    languageCode: de-DE
-    languageDirection: ltr
-    languageName: Deutsch
-    params:
-      subtitle: Die offizielle Sammlung von Ressourcen für Phyphox-Experimente.
-    title: Phyphox Datenbank Prototyp
-    weight: 2
+# These taxonomies need to be translated (in the exact same order as listed here!) in the languages further below
+# Underscores are used in order to preserve capitalization, especially in translations
+# Please refer to the wiki when working on this
+taxonomies:
+  Domain_of_Physics: "Domains_of_Physics.md"
 
+languages:
   en:
     disabled: false
     languageCode: en-US
@@ -28,6 +24,18 @@ languages:
       subtitle: The Official Database For Various Phyphox Experiment Resources.
     title: Phyphox Database Prototype
     weight: 1
+
+  de:
+    disabled: false
+    languageCode: de-DE
+    languageDirection: ltr
+    languageName: Deutsch
+    params:
+      subtitle: Die offizielle Sammlung von Ressourcen für Phyphox-Experimente.
+    title: Phyphox Datenbank Prototyp
+    weight: 2
+    taxonomies:
+      Physik_Bereich: "Bereiche_der_Physik"
 
   # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;
   # it is probable that English & German will get the most support.

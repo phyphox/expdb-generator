@@ -1,11 +1,14 @@
-{{ define "main" }}
-    <h2>{{ i18n "overview" }}</h2>
+{{- define "main" -}}
+    <h2>Kategorien</h2>
+    <li><a href="/{{ .Language.Lang }}/Domains_of_Physics">{{- i18n "linkTo_Domains_of_Physics" -}}</a></li>
+
+    <h2>{{- i18n "overview" -}}</h2>
 
     <ul>
-        {{ range .Pages }}
+        {{- range .Pages -}}
         <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Date.Format "January 2, 2006" }}
+            <a href="{{ .Permalink }}">{{- .Title -}}</a> - {{- .Date.Format "January 2, 2006" -}}
         </li>
-        {{ end }}
+        {{- end -}}
     </ul>
-{{ end }}
+{{- end -}}

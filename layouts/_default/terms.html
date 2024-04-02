@@ -1,0 +1,49 @@
+{{- define "main" -}}
+<ul>
+    {{- range .Data.Pages -}}
+    <li>
+        <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+        <dl>
+            <dt>{{- i18n "linkTo_Domains_of_Physics" -}}</dt>
+            <dd><a href="{{- .Permalink -}}">{{- .Permalink -}}</a></dd>
+
+            <!-- Handling brands that don't have a corresponding page by using 'with' -->
+            {{- with .Params.website -}}
+            <dt>{{- i18n "website" -}}</dt><dd>{{- . -}}</dd>
+            {{- end -}}
+            {{- with .Params.description -}}
+            <dt>{{- i18n "description" -}}</dt><dd>{{- . -}}</dd>
+            {{- end -}}
+
+            <!--
+            Handling taxonomies that don't have a corresponding page by using an 'if' statement.
+            This lets you add default values to your template.
+            -->
+            <dt>{{- i18n "logo_Domains_of_Physics" -}}</dt>
+            <dd>
+                {{- if ne .Params.logo nil -}}
+                <img src="{{- .Params.logo -}}" height="90" />
+                {{- else -}}
+                <img src="http://via.placeholder.com/90x90?text=No+logo" height="90" />
+                {{- end -}}
+            </dd>
+        </dl>
+    </li>
+    {{- end -}}
+</ul>
+
+<h2>List all relevant taxonomies and all the pages that belong to it</h2>
+<ul>
+    {{- range .Data.Pages -}}
+    <li>
+        <a href="{{- .Permalink -}}">{{- .Title -}}</a>
+        {{- $brand := .Title | urlize -}}
+        <ul>
+            {{- range ($.Site.GetPage "taxonomyTerm" "brands" $brand).Pages -}}
+            <li><a href="{{- .Permalink -}}">{{- .Title -}}</a></li>
+            {{- end -}}
+        </ul>
+    </li>
+    {{- end -}}
+</ul>
+{{- end -}}

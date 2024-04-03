@@ -9,10 +9,9 @@ defaultContentLanguage: de
 defaultContentLanguageInSubdir: true
 
 # These taxonomies need to be translated (in the exact same order as listed here!) in the languages further below
-# Underscores are used in order to preserve capitalization, especially in translations
 # Please refer to the wiki when working on this
 taxonomies:
-  Domain_of_Physics: "Domains_of_Physics.md"
+  Domain_of_Physics: "Domains_of_Physics"
 
 languages:
   en:

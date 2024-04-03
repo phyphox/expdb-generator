@@ -6,8 +6,6 @@
   translation: "Overview"
 - id: translations
   translation: "Translations"
-- id: wordCount
-  translation: "word count"
 - id: skipToMainContent
   translation: "Skip to Main Content"
 - id: filter
@@ -18,8 +16,10 @@
   translation: "Website"
 - id: description
   translation: "Description"
+- id: categories
+  translation: "Categories"
 
-- id: linkTo_Domains_of_Physics
-  translation: "To overview 'Domains of Physics'"
-- id: logo_Domains_of_Physics
+- id: domains_of_Physics
+  translation: "Domains of Physics"
+- id: logo
   translation: "symbolic logo"

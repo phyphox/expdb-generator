@@ -5,12 +5,12 @@
     </ul>
 </nav>
 
-{{- if .IsTranslated -}}
+{{- with .AllTranslations -}}
 <nav class="LanguageNav">{{- i18n "translations" -}}
 <ul>
-    {{- range .Translations -}}
+    {{- range $.Translations -}}
     <li>
-        <a href="{{ .RelPermalink }}">{{- .Language.Lang -}}:&nbsp; {{- .LinkTitle -}}</a>
+        <a href="{{ .RelPermalink }}">{{- .Language.LanguageName -}}:&nbsp; {{- .LinkTitle -}}</a>
     </li>
     {{- end -}}
 </ul>

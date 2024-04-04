@@ -1,9 +1,13 @@
 {{- define "main" -}}
-    <h2>{{- i18n "categories" -}}</h2>
-    <li><a href="/{{ .Language.Lang }}/Domains_of_Physics">{{- i18n "domains_of_Physics" -}}</a></li>
+    <h2>{{- i18n "categories" -}}</h2><ul>
+    {{- range $taxonomy_term, $taxonomy := .Site.Taxonomies -}}
+    {{ with $.Site.GetPage (printf "/%s" $taxonomy_term) }}
+        <li><a href="{{ .RelPermalink }}">{{ humanize $taxonomy_term }}</a></li>
+    {{ end }}
+        <!-- {{/* <li><a href="{{- .RelPermalink -}}">{{- $taxonomy_term -}}</a></li> */}}-->
+    {{- end -}}</ul>
 
     <h2>{{- i18n "instructions" -}}&nbsp;{{- i18n "overview" -}}</h2>
-
     <ul>
         {{- range .Pages -}}
         <li>

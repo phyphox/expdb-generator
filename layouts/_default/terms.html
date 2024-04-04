@@ -1,42 +1,8 @@
 {{- define "main" -}}
-<ul>
-    {{- range .Data.Pages -}}
-    <li>
-        <dl>
-            <dt>
-                {{- if ne .Params.logo nil -}}
-                <img src="{{- .Params.logo -}}" alt='{{- i18n "logo" -}}' height="90" />
-                {{- else -}}
-                <img src="http://via.placeholder.com/90x90?text=No+logo" alt='{{- i18n "noLogo" -}}' height="90" />
-                {{- end -}}
-            </dt>
-                <dd><a href='{{- .RelPermalink -}}'>{{- .Title -}}</a></dd>
-
-            <!-- Handling taxonomies that don't have a corresponding page by using 'with' -->
-            {{- with .Params.description -}}
-                <dt>{{- i18n "description" -}}</dt><dd>{{- . -}}</dd>
-            {{- end -}}
-
-            <!-- {{/*
-            {{- with .Params.website -}}
-                <dt>{{- i18n "website" -}}</dt><dd>{{- . -}}</dd>
-            {{- end -}}
-             */}} -->
-        </dl>
-    </li>
+<div>
+    <h1>{{- .Title -}}</h1>
+    <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
+    {{- range .Pages -}}
     {{- end -}}
-</ul>
-
-<!-- {{/*
-{{- with where .Site.Sites "Language.Lang" "ne" "nil" -}}
-    {{- with index . 0 -}}
-    {{- with $.Site.Taxonomies.Alphabetical -}}
-    <ul>
-        <li><a href="{{- .RelPermalink -}}">{{- .Title -}}</a></li>
-    </ul>
-    {{- end -}}
-    {{- end -}}
-{{- end -}}
-*/}} -->
-
+</div>
 {{- end -}}

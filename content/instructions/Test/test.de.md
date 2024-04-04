@@ -5,7 +5,9 @@ last_mod: '2024-03-20T14:15:05+01:00'
 author: "Marcel Kaiser"
 Bereiche_der_Physik:
   - Test
-draft: true
+categories:
+  - Anleitung
+draft: false
 ---
 
 ## Am Anfang ...

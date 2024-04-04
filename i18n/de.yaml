@@ -23,3 +23,5 @@
   translation: "Bereiche der Physik"
 - id: logo
   translation: "Symbolbild"
+- id: noLogo
+  translation: "Kein Logo verfügbar"

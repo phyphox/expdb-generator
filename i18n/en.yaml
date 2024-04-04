@@ -23,3 +23,5 @@
   translation: "Domains of Physics"
 - id: logo
   translation: "symbolic logo"
+- id: noLogo
+  translation: "No logo available"

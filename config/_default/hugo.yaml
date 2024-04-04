@@ -11,6 +11,8 @@ defaultContentLanguageInSubdir: true
 # These taxonomies need to be translated (in the exact same order as listed here!) in the languages further below
 # Please refer to the wiki when working on this
 taxonomies:
+  tag: "tags"
+  category: "categories"
   Domain_of_Physics: "Domains_of_Physics"
 
 languages:
@@ -34,6 +36,7 @@ languages:
     title: Phyphox Datenbank Prototyp
     weight: 2
     taxonomies:
+
       Physik_Bereich: "Bereiche_der_Physik"
 
   # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;

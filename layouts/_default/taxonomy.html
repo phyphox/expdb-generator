@@ -1,11 +1,10 @@
-{{- with .Params.description -}}
-<p>{{.}}</p>
-{{- end -}}
-
+{{- define "main" -}}
+{{- .Content -}}
 <ul>
     {{- range .Data.Pages -}}
     <li>
-        <a href="{{ .Permalink}}">{{- .Title -}}</a>
+        <a href="{{ .RelPermalink}}">{{- .Title -}}</a>
     </li>
     {{- end -}}
 </ul>
+{{- end -}}

@@ -1,27 +1,16 @@
-- id: home
-  translation: "Home"
-- id: instructions
-  translation: "Instructions"
-- id: overview
-  translation: "Overview"
-- id: translations
-  translation: "Translations"
-- id: skipToMainContent
-  translation: "Skip to Main Content"
-- id: filter
-  translation: "Filter"
-- id: database
-  translation: "database"
-- id: website
-  translation: "Website"
-- id: description
-  translation: "Description"
-- id: categories
-  translation: "Categories"
+- home: "Home"
+- instructions: "Instructions"
+- overview: "Overview"
+- translations: "Translations"
+- skipToMainContent: "Skip to Main Content"
+- filter: "Filter"
+- database: "database"
+- website: "Website"
+- description: "Description"
+- categories: "Categories"
+- imprint: "Imprint"
+- accessibilityStatement: "Accessibility Statement"
 
-- id: domains_of_Physics
-  translation: "Domains of Physics"
-- id: logo
-  translation: "symbolic logo"
-- id: noLogo
-  translation: "No logo available"
+- domains_of_Physics: "Domains of Physics"
+- logo: "symbolic logo"
+- noLogo: "No logo available"

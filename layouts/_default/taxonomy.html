@@ -1,9 +1,12 @@
 {{- define "main" -}}
     <div>
         <h1>{{- humanize .Title -}}</h1>
-        <!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
+        <ul><!-- ranges through each of the content files associated with a particular taxonomy term and renders the summary.html content view -->
         {{- range .Pages -}}
-        <!--{{/* {{- .Render "summary"-}} */}}-->
+            <li>
+                <a href="{{ .Permalink }}">{{- .Title -}}</a> -&nbsp; {{- .Date | time.Format ":date_medium" -}}
+            </li>
         {{- end -}}
+        </ul>
     </div>
 {{- end -}}

@@ -16,7 +16,7 @@ languages:
     taxonomies:
       category: "categories"
       tag: "tags"
-      Domain_of_Physics: "Domains_of_Physics"
+      Domain of Physics: "Domains of Physics"
     disabled: false
     languageCode: en-US
     languageDirection: ltr
@@ -28,9 +28,9 @@ languages:
 
   de:
     taxonomies:
-      kategorie: "kategorien"
-      etikette: "etiketten"
-      Bereich_der_Physik: "Bereiche_der_Physik"
+      category: "Kategorien"
+      tag: "Etiketten"
+      Domain of Physics: "Bereiche der Physik"
     permalinks:
       page:
         instructions: /anleitungen/:slug/

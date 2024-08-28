@@ -1,0 +1,17 @@
+{{- define "main" -}}
+    <h2>{{- i18n "categories" -}}</h2><ul>
+    {{- range $taxonomy_term, $taxonomy := .Site.Taxonomies -}}
+    {{- with $.Site.GetPage (printf "/%s" $taxonomy_term) -}}
+        <li><a href="{{ .RelPermalink }}">{{- $taxonomy_term -}}</a></li>
+    {{- end -}}
+    {{- end -}}</ul>
+
+    <h2>{{- i18n "instructions" -}}&nbsp;{{- i18n "overview" -}}</h2>
+    <ul>
+        {{- range .Pages -}}
+        <li>
+            <a href="{{ .Permalink }}">{{- .Title -}}</a> -&nbsp; {{- .Date | time.Format ":date_medium" -}}
+        </li>
+        {{- end -}}
+    </ul>
+{{- end -}}

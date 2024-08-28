@@ -1,0 +1,9 @@
+<hr/>
+{{- with .Params.hide_footer -}}
+<!-- No footer here! -->
+{{- else -}}
+<footer>
+    phyphox&nbsp;{{- i18n "database" -}}, 2024 {{- if ne ($y := now.Year)  2024 -}} {{- print "-" $y -}} {{- end -}}
+    &nbsp;&#124;&nbsp;<a href="">{{- i18n "imprint" -}}</a>&nbsp;&#124;&nbsp;<a href="">{{- i18n "accessibilityStatement" -}}</a>
+</footer>
+{{- end -}}

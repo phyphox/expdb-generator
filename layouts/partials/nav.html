@@ -1,0 +1,19 @@
+<nav class="CategoryNav">
+    <ul>
+        <li><a href="/{{ .Language.Lang }}/">{{- i18n "home" -}}</a></li>
+        <li><a href="{{ relref . "instructions" }}">{{- i18n "instructions" -}}</a></li>
+    </ul>
+</nav>
+
+{{- with .AllTranslations -}}
+<nav class="LanguageNav">{{- i18n "translations" -}}
+<ul>
+    {{- range $.Translations -}}
+    <li>
+        <a href="{{ .RelPermalink }}">{{- .Language.LanguageName -}}:&nbsp; {{- .LinkTitle -}}</a>
+    </li>
+    {{- end -}}
+</ul>
+</nav>
+<hr/>
+{{- end -}}

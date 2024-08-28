@@ -1,4 +1,0 @@
----
-title: Instructions
-translationKey: instructions
----

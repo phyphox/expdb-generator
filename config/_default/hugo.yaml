@@ -6,32 +6,36 @@ params:
     phone:
 
 defaultContentLanguage: de
-defaultContentLanguageInSubdir: true
+#defaultContentLanguageInSubdir: true
 
 # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;
 # & it is probable that English & German will get the most support.
 languages:
   en:
+    contentDir: content/en
     disabled: false
     languageCode: en-US
     languageDirection: ltr
     languageName: English
     params:
-      subtitle: The Official Database for Various phyphox Experiment Resources.
+      subtitle: The Official Database for phyphox Experiment Resources.
     title: phyphox Database Prototype
-    weight: 1
 
+    weight: 1
   de:
-    permalinks:
-      page:
-        instructions: /anleitungen/:slug/
-      section:
-        instructions: /anleitungen/
+    contentDir: content/de
+
+    #permalinks:
+     # page:
+      #  instructions: /anleitungen/:slug/
+      #section:
+       # instructions: /anleitungen/
+
     disabled: false
     languageCode: de-DE
     languageDirection: ltr
     languageName: Deutsch
     params:
-      subtitle: Die offizielle Sammlung von Ressourcen für phyphox-Experimente.
+      subtitle: Die offizielle Sammlung von phyphox-Ressourcen.
     title: phyphox Datenbank Prototyp
     weight: 2

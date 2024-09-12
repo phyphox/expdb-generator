@@ -8,7 +8,7 @@ author: "Marcel Kaiser"
 taxonomies:
   target_group: ISO...
   difficulty: easy
-draft: true
+draft: false
 tags:
   - test
   - isItWorking

@@ -1,4 +1,4 @@
 ---
 title: Start
 ---
-Dies ist die Startseite.
+This is the start page

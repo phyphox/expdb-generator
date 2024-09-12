@@ -5,6 +5,8 @@ params:
     email:
     phone:
 
+theme: onion
+
 defaultContentLanguage: de
 #defaultContentLanguageInSubdir: true
 
@@ -13,6 +15,10 @@ defaultContentLanguage: de
 languages:
   en:
     contentDir: content/en
+    permalinks:
+      page:
+        instructions: /instructions/:slug/
+
     disabled: false
     languageCode: en-US
     languageDirection: ltr
@@ -25,11 +31,11 @@ languages:
   de:
     contentDir: content/de
 
-    #permalinks:
-     # page:
-      #  instructions: /anleitungen/:slug/
-      #section:
-       # instructions: /anleitungen/
+    permalinks:
+      page:
+        instructions: /anleitungen/:slug/
+      section:
+        instructions: /anleitungen/
 
     disabled: false
     languageCode: de-DE

@@ -1,0 +1,21 @@
+name: Pandoc
+
+on:
+  push:
+    branches:
+    - main
+    paths:
+    - content/
+    - '**.md'
+
+jobs:
+  convert_via_pandoc:
+    runs-on: ubuntu-22.04
+    steps:
+      -
+      - uses: docker://pandoc/latex:2.9
+        with:
+          args: >-  # allows you to break string into multiple lines
+            --standalone
+            --output=index.html
+            input.txt

@@ -1,0 +1,21 @@
+<!-- load JS related information after almost everything is said and done -->
+{{ $example1 := resources.Get "js/alpine.js" }}
+{{ $example2 := resources.Get "js/example2.js" }}
+
+{{ $script := slice $example1 $example2 | resources.Concat "js/main.js" }}
+
+{{ $params := dict "data" site.Data.instructions.data }}
+{{ $opts := dict "params" $params }}
+{{ $built := $script | js.Build $opts }}
+
+<hr/>
+{{- with .Params.hide_footer -}}
+<!-- No footer here! -->
+{{- else -}}
+<footer>
+    phyphox&nbsp;{{- i18n "database" -}}, 2024 {{- if ne ($y := now.Year)  2024 -}} {{- print "-" $y -}} {{- end -}}
+    &nbsp;&#124;&nbsp;<a href="">{{- i18n "imprint" -}}</a>&nbsp;&#124;&nbsp;<a href="">{{- i18n "accessibilityStatement" -}}</a>&nbsp;&#124;&nbsp;<a href="https://github.com/phyphox/expdb-generator">GitHub</a>
+</footer>
+
+<script defer language="javascript" type="text/javascript"  src="{{ $built.RelPermalink }}" | urlize | relURL }}"></script>
+{{- end -}}

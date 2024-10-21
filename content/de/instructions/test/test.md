@@ -1,14 +1,14 @@
 ---
 title: Testlauf
+draft: false
 slug: test
 translationKey: test
 date: '2024-03-20T14:15:05+01:00'
 last_mod: '2024-03-20T14:15:05+01:00'
 author: "Marcel Kaiser"
-taxonomies:
-  target_group: ISO...
-  difficulty: easy
-draft: false
+categories:
+  - instruction
+  - test
 tags:
   - test
   - isItWorking

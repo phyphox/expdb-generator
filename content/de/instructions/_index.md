@@ -1,3 +1,4 @@
 ---
-title: Übersicht
+title: Übersicht Anleitungen
+translationKey: instructions
 ---

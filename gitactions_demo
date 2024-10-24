@@ -6,7 +6,7 @@ on:
     - main
     paths:
     - content/
-    - '**.md'
+    - '*.md'
 
 jobs:
   convert_via_pandoc:
@@ -19,3 +19,9 @@ jobs:
             --standalone
             --output=index.html
             input.txt
+
+
+            $OUTPUT_TYPES = "latex pdf html docx odt"
+            parallel --dry-run --jobs 0 \
+                pandoc --from markdown {} -to native '|' for i in $OUTPUT_TYPES';' do pandoc -standalone -to $i';' done \
+                ::: $WORKABLE_FILES

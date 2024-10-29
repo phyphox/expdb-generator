@@ -1,0 +1,60 @@
+name: conditional_convert_via_pandoc
+#
+# A script to check for changed and added .md files in content/ and convert those with pandoc (except for index.md)
+#
+# Thanks to Gérald Barré aka. meziantou for the basic template of the condition check
+# Written by Marcel Kaiser
+#
+# published: 2024-10-29
+# last edit: 2024-10-29
+#
+on:
+  push:
+    branches:
+      - 'main' # Do the work exclusively for the branch deploying the website
+
+jobs:
+  # Seperate jobs to be able to possibly use condition_check_files for other tasks as well
+  condition_check_files:
+    runs-on: 'ubuntu-22.04'
+    # Declare outputs for next jobs
+    outputs:
+      docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Checkout as many commits as needed for the diff
+        fetch-depth: 1
+    - shell: pwsh
+      id: check_file_changed
+      run: |
+        # Diff HEAD with the previous commit
+        $diff = git diff --name-only HEAD^ HEAD
+
+        # Check if a file under content/ with the .md extension has changed (A - added, M - modified) except for the Hugo associated index.md files
+        $SourceDiff = $diff | Where-Object { $_ -match '.md$' -and -not ($_ -match 'index.md') -and ($_ -match '^A\s+content/' -or $_ -match '^M\s+content/') }
+        $HasDiff = $SourceDiff.Length -gt 0
+
+        # Set the output named "docs_changed"
+        echo "::set-output name=docs_changed::$HasDiff"
+
+  # Run the job only with 'docs_changed' equals "True"
+  conditional_pandoc:
+    runs-on: 'ubuntu-22.04'
+    needs: [ condition_check_files ]
+    if: needs.condition_check_files.outputs.docs_changed == 'True'
+    steps:
+    - uses: docker://pandoc/latex:3.5
+    - shell: pwsh
+      run: |
+        # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
+        $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
+        # Use as many cores as available to be as fast as possible
+        parallel --jobs 0 \
+          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
+          pandoc --from markdown --to native {} -o {.}.ast ';'\
+          for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \
+            pandoc --from native {.}.ast --standalone -o '{.}.$i' ';' \
+          done';' \
+          # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
+          rm {.}.ast ::: needs.condition_changed_files.outputs.docs_changed

@@ -22,9 +22,9 @@ jobs:
       bool_files_changed: ${{ steps.check_file_changed.outputs.bool_files_changed }}
       list_changed_files: ${{ steps.check_file_changed.outputs.list_changed_files }}
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
       with:
-        # Checkout as many commits as needed for the diff
+        # Checkout as many commits as needed for the diff.
         fetch-depth: 1
     - shell: pwsh
       id: check_file_changed

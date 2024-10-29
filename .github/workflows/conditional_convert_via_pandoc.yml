@@ -24,16 +24,16 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Checkout as many commits as needed for the diff.
+        # Checkout as many commits as needed for the diff
         fetch-depth: 1
     - shell: pwsh
       id: check_file_changed
       run: |
-        # Diff HEAD with the previous commit
-        $diff = git diff --name-only HEAD^ HEAD
+        # Look only for changed files (A - added, M - modified) and return their names (the specific changes are irrelevant)
+        $diff = git diff --name-only --diff-filter=AM HEAD^ HEAD
 
-        # Check if a file under content/ with the .md extension has changed (A - added, M - modified) except for the Hugo associated _index.md files
-        $SourceDiff = $diff | Where-Object { $_ -match '.md$' -and -not ($_ -match '_index.md') -and ($_ -match '^A\s+content/' -or $_ -match '^M\s+content/') }
+        # Filter the files under content/ with the .md extension excluding the Hugo associated _index.md files
+        $SourceDiff = $diff | Where-Object { $_ -match '^content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
         $HasDiff = $SourceDiff.Length -gt 0
 
         # Set the output named "bool_files_changed"

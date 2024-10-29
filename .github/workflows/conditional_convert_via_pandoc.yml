@@ -1,6 +1,6 @@
 name: conditional_convert_via_pandoc
 #
-# A script to check for changed and added .md files in content/ and convert those with pandoc (except for index.md)
+# A script to check for changed and added .md files in content/ and convert those with pandoc (except for _index.md)
 #
 # Thanks to Gérald Barré aka. meziantou for the basic template of the condition check
 # Written by Marcel Kaiser
@@ -32,13 +32,13 @@ jobs:
         # Diff HEAD with the previous commit
         $diff = git diff --name-only HEAD^ HEAD
 
-        # Check if a file under content/ with the .md extension has changed (A - added, M - modified) except for the Hugo associated index.md files
-        $SourceDiff = $diff | Where-Object { $_ -match '.md$' -and -not ($_ -match 'index.md') -and ($_ -match '^A\s+content/' -or $_ -match '^M\s+content/') }
+        # Check if a file under content/ with the .md extension has changed (A - added, M - modified) except for the Hugo associated _index.md files
+        $SourceDiff = $diff | Where-Object { $_ -match '.md$' -and -not ($_ -match '_index.md') -and ($_ -match '^A\s+content/' -or $_ -match '^M\s+content/') }
         $HasDiff = $SourceDiff.Length -gt 0
 
         # Set the output named "bool_files_changed"
-        echo "::set-output name=bool_files_changed::$HasDiff"
-        echo "::set-output name=list_changed_files::$SourceDiff"
+        echo "{bool_files_changed}={$HasDiff}" >> $GITHUB_OUTPUT
+        echo "{list_changed_files}={$SourceDiff}" >> $GITHUB_OUTPUT
 
   # Run the job only with 'bool_files_changed' equals 'True'
   conditional_pandoc:

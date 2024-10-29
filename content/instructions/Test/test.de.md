@@ -11,6 +11,8 @@ tags:
   - test
   - isItWorking
   - theAnswerToTheUniverseAndEverything
+category:
+  - instruction
 ---
 
 ## Am Anfang ...

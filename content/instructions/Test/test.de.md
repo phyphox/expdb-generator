@@ -16,4 +16,4 @@ category:
 ---
 
 ## Am Anfang ...
-... war der Testlauf, der ihr aller Schicksal besiegeln sollte.
+... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade!

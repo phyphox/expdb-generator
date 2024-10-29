@@ -24,13 +24,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
       with:
-        # Checkout as many commits as needed for the diff
         fetch-depth: 1
     - shell: pwsh
       id: check_file_changed
       run: |
         # Look only for changed files (A - added, M - modified) and return their names (the specific changes are irrelevant)
-        $diff = git diff --name-only --diff-filter=AM HEAD^ HEAD
+        $diff = git diff --name-only --diff-filter=AM "HEAD^" HEAD
 
         # Filter the files under content/ with the .md extension excluding the Hugo associated _index.md files
         $SourceDiff = $diff | Where-Object { $_ -match '^content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
@@ -53,10 +52,10 @@ jobs:
         $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
         # Use as many cores as available to be as fast as possible
         parallel --jobs 0 \
-          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from txt
-          pandoc --from markdown --to native {} -o {.}.txt ';'\
+          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
+          pandoc --from markdown {} --to native -o {.}.ast ';'\
           for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \
-            pandoc --from native {.}.txt --standalone -o '{.}.$i' ';' \
+            pandoc --from native {.}.ast --standalone -o '{.}.$i' ';' \
           done';' \
           # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
-          rm {.}.txt ::: needs.condition_changed_files.outputs.list_changed_files
+          rm {.}.ast ::: needs.condition_changed_files.outputs.list_changed_files

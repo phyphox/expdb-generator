@@ -19,7 +19,8 @@ jobs:
     runs-on: 'ubuntu-22.04'
     # Declare outputs for next jobs
     outputs:
-      docs_changed: ${{ steps.check_file_changed.outputs.docs_changed }}
+      bool_files_changed: ${{ steps.check_file_changed.outputs.bool_files_changed }}
+      list_changed_files: ${{ steps.check_file_changed.outputs.list_changed_files }}
     steps:
     - uses: actions/checkout@v2
       with:
@@ -35,14 +36,15 @@ jobs:
         $SourceDiff = $diff | Where-Object { $_ -match '.md$' -and -not ($_ -match 'index.md') -and ($_ -match '^A\s+content/' -or $_ -match '^M\s+content/') }
         $HasDiff = $SourceDiff.Length -gt 0
 
-        # Set the output named "docs_changed"
-        echo "::set-output name=docs_changed::$HasDiff"
+        # Set the output named "bool_files_changed"
+        echo "::set-output name=bool_files_changed::$HasDiff"
+        echo "::set-output name=list_changed_files::$SourceDiff"
 
-  # Run the job only with 'docs_changed' equals "True"
+  # Run the job only with 'bool_files_changed' equals 'True'
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
-    if: needs.condition_check_files.outputs.docs_changed == 'True'
+    if: needs.condition_check_files.outputs.bool_files_changed == 'True'
     steps:
     - uses: docker://pandoc/latex:3.5
     - shell: pwsh
@@ -51,10 +53,10 @@ jobs:
         $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
         # Use as many cores as available to be as fast as possible
         parallel --jobs 0 \
-          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
-          pandoc --from markdown --to native {} -o {.}.ast ';'\
+          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from txt
+          pandoc --from markdown --to native {} -o {.}.txt ';'\
           for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \
-            pandoc --from native {.}.ast --standalone -o '{.}.$i' ';' \
+            pandoc --from native {.}.txt --standalone -o '{.}.$i' ';' \
           done';' \
           # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
-          rm {.}.ast ::: needs.condition_changed_files.outputs.docs_changed
+          rm {.}.txt ::: needs.condition_changed_files.outputs.list_changed_files

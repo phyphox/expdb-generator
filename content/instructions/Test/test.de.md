@@ -8,7 +8,7 @@ taxonomies:
   difficulty: easy
 draft: true
 tags:
-  - test
+  - newTest
   - isItWorking
   - theAnswerToTheUniverseAndEverything
 category:

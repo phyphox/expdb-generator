@@ -1,0 +1,24 @@
+<!--  required:
+    src: where to be found
+	alt: alternative text
+	  optional:
+	link: if different from src
+	width: if it shouldn't spread the whole page
+	class: class of the figure
+	caption: caption
+	mouse: what the image says when moused over ("title" in HTML)
+-->
+<figure {{ with .Get "class" }}class="{{.}}"{{ end -}}>
+    {{- with .Get "link"}}<a href="{{.}}">{{ else }}<a href="{{ .Get "src" }}">{{ end -}}
+    <img src="{{ .Get "src" }}"
+    {{- .Get "alt" }} alt="{{.-}}"
+    {{- with .Get "mouse" }} title="{{.}}"{{ end -}}
+    {{- with .Get "width" }} width="{{.}}"{{ end -}}
+    >
+    {{- if .Get "link"}}</a>{{ end -}}
+{{- with .Get "caption" -}}
+<figcaption>
+    {{- . -}}
+</figcaption>
+{{- end -}}
+</figure>

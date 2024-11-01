@@ -11,7 +11,7 @@
 <figure {{ with .Get "class" }}class="{{.}}"{{ end -}}>
     {{- with .Get "link"}}<a href="{{.}}">{{ else }}<a href="{{ .Get "src" }}">{{ end -}}
     <img src="{{ .Get "src" }}"
-    {{- .Get "alt" }} alt="{{.-}}"
+    {{- .Get "alt" }} alt="{{ . -}}"
     {{- with .Get "mouse" }} title="{{.}}"{{ end -}}
     {{- with .Get "width" }} width="{{.}}"{{ end -}}
     >

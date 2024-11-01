@@ -1,8 +1,7 @@
 ---
-title: '{{ replace .Name "-" " " | title }}'
-date: '{{ .Date }}'
-translationKey: # done by phyphox Team
-author: # Your Name
+title: 'Neu'
+author: string
+date: '2024-11-01T13:16:17+01:00'
 CreativeCommons: ['0', 'BY', 'BY-SA']  # choose. Remove everything else
 categories:  # Remove all categories which are not accurate
   - 'Waves and Sound and Optics'
@@ -38,7 +37,7 @@ tags: # All Tag start upper-case expect for 'phyphox'. This list can be expanded
 - 'Gyroscope'
 - 'Coil'
 ---
-# {{ replace .Name "-" " " | title }}
+# Neu
 *Put short description of the content here*
 
 ## A Midsummer Night's Dream

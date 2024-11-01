@@ -36,8 +36,8 @@ jobs:
         $HasDiff = $FilesDiff.Length -gt 0
 
         # Set the output named "bool_files_changed"
-        echo "{bool_files_changed}={$HasDiff}" >> $env:GITHUB_OUTPUT
-        echo "{list_changed_files}={$FilesDiff}" >> $env:GITHUB_OUTPUT
+        echo "bool_files_changed=$HasDiff" >> $env:GITHUB_OUTPUT
+        echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
 
   # Run the job only with 'bool_files_changed' equals 'True'
   conditional_pandoc:

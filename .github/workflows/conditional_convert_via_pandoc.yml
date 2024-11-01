@@ -49,7 +49,7 @@ jobs:
     steps:
     - uses: docker://pandoc/latex:3.5
     - shell: pwsh
-      run: |
+      run: >
         # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
         $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
         # Use as many cores as available to be as fast as possible

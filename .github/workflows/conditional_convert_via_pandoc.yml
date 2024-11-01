@@ -44,6 +44,8 @@ jobs:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
     if: needs.condition_check_files.outputs.bool_files_changed == 'True'
+    env:
+          list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:
     - uses: docker://pandoc/latex:3.5
     - shell: pwsh
@@ -58,4 +60,4 @@ jobs:
             pandoc --from native {.}.ast --standalone -o '{.}.$i' ';' \
           done';' \
           # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
-          rm {.}.ast ::: needs.condition_changed_files.outputs.list_changed_files
+          rm {.}.ast ::: $env:list_changed_files

@@ -4,12 +4,7 @@ params:
     name: II. Lehrstuhl für Physik, RWTH Aachen
     email:
     phone:
-
-# theme: onion
-
-module:
-  imports:
-    - path: github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs
+  math: true
 
 defaultContentLanguage: de
 #defaultContentLanguageInSubdir: true
@@ -49,3 +44,29 @@ languages:
       subtitle: Die offizielle Sammlung von phyphox-Ressourcen.
     title: phyphox Datenbank Prototyp
     weight: 2
+
+
+# theme: onion
+
+#module:
+  # imports:
+    #  - path: github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs
+
+taxonomies:
+  category: categories
+  tag: tags
+
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+        enable: true

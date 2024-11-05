@@ -1,6 +1,6 @@
 ---
 title: 'Neu'
-author: string
+author: 'Ja Moin'
 date: '2024-11-01T13:16:17+01:00'
 CreativeCommons: ['0', 'BY', 'BY-SA']  # choose. Remove everything else
 categories:  # Remove all categories which are not accurate
@@ -30,21 +30,21 @@ requiredMaterials:
   - 'Household items'
   - 'Basic experiment material'
   - 'Special equipment'
-tags: # All Tag start upper-case expect for 'phyphox'. This list can be expanded!
-- 'phyphox'
-- 'Smartphone'
-- 'Experiment'
-- 'Gyroscope'
-- 'Coil'
+# All Tag start upper-case expect for 'phyphox'. This list can be expanded!
+tags:
+  - 'phyphox'
+  - 'Smartphone'
+  - 'Experiment'
+  - 'Gyroscope'
+  - 'Coil'
 ---
 # Neu
-*Put short description of the content here*
+
+This file is full of examples of what to do with Markdown.
 
 ## A Midsummer Night's Dream
 
 Written around 1595 or 1596 by William Shakespeare.[^1]
-
-This file is full of examples of what to do with Markdown.
 
 ### Act I, Scene 1 {#example-id}
 Enter THESEUS, HIPPOLYTA, PHILOSTRATE, and Attendants
@@ -60,7 +60,7 @@ Hippolyta
 
 ## More examples
 
-A dandyfine list of styles
+A dandy fine list of styles and options
 - **bold** 
   - __bold as well__
 - *italic* 
@@ -77,13 +77,20 @@ A dandyfine list of styles
    - [ ] ipsum
    - [x] dolor
 
-You can use LaTeX style formating of math, even inline: $U=R\cdot I$
+You can use LaTeX style formating of math, even inline: \(U=R\cdot I\) (please note that you cannot use the typical 
+delimiter `$` here). Bit more complex:
 
-$$\begin{align}
-  E &= m\cdot c^2 \\
-    &=m\cdot (\nu\cdot\lambda)^2
-     \underset{would~you~look~at~that!}{=} \left(\frac{h\cdot c}{\lambda}\right)
-\end{align}$$
+\[
+  \begin{align}
+    E &= m\cdot c^2 \\
+      &=m\cdot (\nu\cdot\lambda)^2
+       \underset{would~you~look~at~that!}{=} \left(\frac{h\cdot c}{\lambda}\right)
+  \end{align}
+\]
+Another test:
+$$
+  \vec{F} = \frac{\dot{\vec{p}}}{m}
+$$
 
 You can also write code 
 
@@ -100,6 +107,9 @@ Tables are possible as well. Note that the second row defines the relative width
 | Paragraph   |    Text     | And more      |
 
 ## Literature and sources
+
+Any comments on the literature might go here. There will be a horizontal line drawn before the footnotes, so you may 
+want to remove the heading. It's up to you eventually. 
 
 [^1]: W. Shakespeare (1595 or 1596), A Midsummer Night's Dream, [Open Source Shakespeare](https://www.opensourceshakespeare.org/views/plays/play_view.php?WorkID=midsummer)
 

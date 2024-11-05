@@ -1,0 +1,60 @@
+{{- define "main" -}}
+    <h2>{{- i18n "overview" -}}&nbsp;{{- i18n "instructions" -}}</h2>
+
+    <div class="instructions">
+        <p id="message">{{- i18n "showing" -}}&nbsp;<output>{{- "???" -}}&nbsp;{{- i18n "instructions" -}}</output></p>
+
+        <div x-data="filterPosts()">
+            <!-- Tag Filters -->
+            <div>
+                <template x-for="tag in tags" :key="tag">
+                    <button @click="toggleTag(tag)" :class="{'active': selectedTags.includes(tag)}" x-text="tag"></button>
+                </template>
+            </div>
+
+            <!-- Posts List -->
+            <div>
+                {{ range .Pages }}
+                <div class="post" x-show="filteredPosts.includes('{{ .RelPermalink }}')">
+                    <h2>{{ .Title }}</h2>
+                    <div>{{ .Summary }}</div>
+                    <div>Tags: {{ range .Params.tags }}<span>{{ . }}</span>{{ end }}</div>
+                </div>
+                {{ end }}
+            </div>
+        </div>
+
+        <div aria-labelledby="message" role="region">
+            <ol class="instructions">
+                {{- range .Pages -}}
+                <li>
+                    <a href="{{ .Permalink }}">{{- .Title -}}</a> -&nbsp; {{- .Date | time.Format ":date_medium" -}}
+                </li>
+                {{- end -}}
+            </ol>
+        </div>
+    </div>
+
+
+<script src="https://unpkg.com/alpinejs@3.9.1/dist/cdn.min.js" integrity="sha384-mDHH3kdyMS0F6QcfHCxEgPMMjssTurzucc7Jct3g1GOfB4p7PxJuugPP1NOLvE7I" crossorigin="anonymous">
+    function filterPosts() {
+        return {
+            tags: {{.Site.Taxonomies.tags | jsonify}},
+        selectedTags: [],
+            posts: {{.Pages | jsonify}},
+        get filteredPosts() {
+            if (this.selectedTags.length === 0) return this.posts.map(post => post.RelPermalink)
+            return this.posts.filter(post => post.Params.tags.some(tag => this.selectedTags.includes(tag))).map(post => post.RelPermalink)
+        },
+        toggleTag(tag) {
+            if (this.selectedTags.includes(tag)) {
+                this.selectedTags = this.selectedTags.filter(t => t !== tag)
+            } else {
+                this.selectedTags.push(tag)
+            }
+        }
+    }
+    }
+</script>
+
+{{- end -}}

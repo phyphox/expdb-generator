@@ -1,3 +1,4 @@
+<!-- {{/* Anlauf 1 */}} -->
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
 {{ .Content }}
@@ -6,3 +7,15 @@
 {{ end }}
 {{ end }}
 
+
+<!-- {{/* Anlauf 2 */}} -->
+
+{{ $taxonomyObject := .Data.Terms }}
+{{ range $term, $weightedPages := $taxonomyObject }}
+<h2><a href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }}</a></h2>
+<ul>
+    {{ range $weightedPages }}
+    <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}

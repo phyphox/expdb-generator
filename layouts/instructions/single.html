@@ -5,7 +5,11 @@
 
   <br />
   {{- with .Params.tags -}}
-  {{- i18n "tagged_as" -}}:&nbsp;{{- delimit . ", " -}}
+  {{- i18n "tags" -}}:&nbsp;{{- delimit . ", " -}}
+  {{- end -}}
+  <br />
+  {{- with .Params.categories -}}
+  {{- i18n "categories" -}}:&nbsp;{{- delimit . ", " -}}
   {{- end -}}
 
   <hr />

@@ -2,6 +2,7 @@
 title: 'Neu'
 author: 'Ja Moin'
 date: '2024-11-01T13:16:17+01:00'
+version: '0.4.2'
 CreativeCommons: ['0', 'BY', 'BY-SA']  # choose. Remove everything else
 categories:  # Remove all categories which are not accurate
   - 'Waves and Sound and Optics'
@@ -42,6 +43,8 @@ tags:
 
 This file is full of examples of what to do with Markdown.
 
+<!--more-->
+
 ## A Midsummer Night's Dream
 
 Written around 1595 or 1596 by William Shakespeare.[^1]
@@ -68,6 +71,7 @@ A dandy fine list of styles and options
 - ***bold italic*** 
   - ___yet again___ 
 - ~~strikethrough~~
+- `inline code`
 - A [reference](#example-id) within the document
 
 1. numbered
@@ -99,12 +103,18 @@ import numpy as np
 
 is_it_awesome = True
 ```
-Tables are possible as well. Note that the second row defines the relative width of the columns and the alignment of text
+
+Tables are possible as well. Note that the second row defines the alignment of text (with :).
+You might want to use an [online editor](https://www.tablesgenerator.com/markdown_tables)
+
+<div style="text-align: center; margin-left: auto; margin-right: auto; width: 75%;" >
 
 | Syntax      | Description | Test Text     |
 | :---        |:-----------:|          ---: |
 | Header      |    Title    | Here's this   |
 | Paragraph   |    Text     | And more      |
+
+</div>
 
 ## Literature and sources
 

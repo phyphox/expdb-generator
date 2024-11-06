@@ -18,6 +18,10 @@ languages:
       page:
         instructions: /instructions/:slug/
 
+    taxonomies:
+      category: "categories"
+      tag: "tags"
+
     disabled: false
     languageCode: en-US
     languageDirection: ltr
@@ -31,10 +35,15 @@ languages:
     contentDir: content/de
 
     permalinks:
+      categories: "/:section/:slug"
       page:
         instructions: /anleitungen/:slug/
       section:
         instructions: /anleitungen/
+
+    taxonomies:
+      category: "Kategorien"
+      tag: "Stichwörter"
 
     disabled: false
     languageCode: de-DE
@@ -70,3 +79,7 @@ markup:
             - - \(
               - \)
         enable: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false

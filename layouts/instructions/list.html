@@ -1,7 +1,7 @@
 {{- define "main" -}}
     <h2>{{- i18n "overview" -}}&nbsp;{{- i18n "instructions" -}}</h2>
 
-    {{- partial "taglist.html" . -}}
+    {{- partial "categories.html" . -}}
 
     {{ $pages := where site.RegularPages "Type" "instructions" }}
     {{ $paginator := .Paginate $pages }}
@@ -15,7 +15,9 @@
             <ol class="instructions">
                 {{- range $paginator.Pages -}}
                 <li>
-                    <a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a> -&nbsp; {{- .Date | time.Format ":date_medium" -}}
+                    <h4><a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a></h4>
+                    {{- .Date | time.Format ":date_medium" -}}&nbsp;-&nbsp;{{- i18n "version" -}}:&nbsp;{{- .Param "version" -}}<hr/>
+                    <div class="summary"> {{- .Summary -}} </div>
                 </li>
                 {{- end -}}
             </ol>

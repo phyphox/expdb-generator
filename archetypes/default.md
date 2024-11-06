@@ -2,6 +2,7 @@
 title: '{{ replace .Name "-" " " | title }}'
 date: '{{ .Date }}'
 translationKey: # done by phyphox Team
+version: '0.4.2'
 author: # Your Name
 CreativeCommons: ['0', 'BY', 'BY-SA']  # choose. Remove everything else
 categories:  # Remove all categories which are not accurate
@@ -41,11 +42,12 @@ tags: # All Tag start upper-case expect for 'phyphox'. This list can be expanded
 # {{ replace .Name "-" " " | title }}
 *Put short description of the content here*
 
+<!--more--> 
+<!-- (This comment can be deleted) Only what comes before the `<!--more--` comment is considered for a summary -->
+
 ## A Midsummer Night's Dream
 
 Written around 1595 or 1596 by William Shakespeare.[^1]
-
-This file is full of examples of what to do with Markdown.
 
 ### Act I, Scene 1 {#example-id}
 Enter THESEUS, HIPPOLYTA, PHILOSTRATE, and Attendants
@@ -69,6 +71,7 @@ A dandy fine list of styles and options
 - ***bold italic***
     - ___yet again___
 - ~~strikethrough~~
+- `inline code`
 - A [reference](#example-id) within the document
 
 1. numbered
@@ -100,12 +103,18 @@ import numpy as np
 
 is_it_awesome = True
 ```
-Tables are possible as well. Note that the second row defines the relative width of the columns and the alignment of text
 
-| Syntax      | Description | Test Text     |
-| :---        |:-----------:|          ---: |
-| Header      |    Title    | Here's this   |
-| Paragraph   |    Text     | And more      |
+Tables are possible as well. Note that the second row defines the alignment of text (with :).
+You might want to use an [online editor](https://www.tablesgenerator.com/markdown_tables)
+
+<div style="text-align: center; margin-left: auto; margin-right: auto; width: 75%;" >
+
+| Syntax    | Description |                         Test Text |
+|:----------|:-----------:|----------------------------------:|
+| Header    |    Title    |                       Here's this |
+| Paragraph |    Text     | Here's how to escape the pipe: \| |
+
+</div>
 
 ## Literature and sources
 

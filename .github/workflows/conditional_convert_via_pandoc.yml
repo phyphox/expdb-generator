@@ -47,7 +47,12 @@ jobs:
     env:
       list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:
-      - uses: docker://pandoc/latex:3.5
+      #- uses: docker://pandoc/latex:3.5
+      - name: install_pandoc
+        uses: pandoc/actions/setup@v1
+        with:
+          version: 3.5
+      - name: run_pandoc
         run: >
           # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
           $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"

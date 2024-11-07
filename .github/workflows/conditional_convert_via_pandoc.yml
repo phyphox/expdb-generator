@@ -56,8 +56,7 @@ jobs:
         parallel --jobs 0 \
           # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
           pandoc --from markdown {} --to native -o '{.}.ast' ';'\
-          for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \
+          foreach (i in $ONLY_STANDALONE_OUTPUT_TYPES) {
             pandoc --from native '{.}.ast' --standalone -o '{.}.$i' ';' \
-          done';' \
-          # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
+          }\  # You can easily add individual conversion rules by using pandoc after this comment. Keep in mind to finish all non-comment lines with backslash
           rm '{.}.ast' ::: $env:list_changed_files

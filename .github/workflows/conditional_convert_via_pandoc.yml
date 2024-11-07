@@ -6,7 +6,7 @@ name: conditional_convert_via_pandoc
 # Written by Marcel Kaiser
 #
 # published: 2024-10-29
-# last edit: 2024-10-29
+# last edit: 2024-11-07
 #
 on:
   push:
@@ -54,6 +54,7 @@ jobs:
           version: 3.5
       - name: run_pandoc
         run: >
+          pandoc --version
           # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
           $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
           # Use as many cores as available to be as fast as possible

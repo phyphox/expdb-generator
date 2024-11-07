@@ -56,7 +56,7 @@ jobs:
           version: 3.5
       - name: run_pandoc
         run: >
-          $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
+          $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt";
           parallel --jobs 0 \
             pandoc --from markdown {} --to native -o '{.}.ast' ';'\
             for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \

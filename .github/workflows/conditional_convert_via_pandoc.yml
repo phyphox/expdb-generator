@@ -48,7 +48,7 @@ jobs:
           list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:
     - uses: docker://pandoc/latex:3.5
-    - shell: pwsh
+    - name: convert
       run: >
         # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
         $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
@@ -56,7 +56,8 @@ jobs:
         parallel --jobs 0 \
           # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
           pandoc --from markdown {} --to native -o '{.}.ast' ';'\
-          foreach ($i in $ONLY_STANDALONE_OUTPUT_TYPES) {
+          for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \
             pandoc --from native '{.}.ast' --standalone -o '{.}.$i' ';' \
-          }\  # You can easily add individual conversion rules by using pandoc after this comment. Keep in mind to finish all non-comment lines with backslash
+          done';' \
+          # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
           rm '{.}.ast' ::: $env:list_changed_files

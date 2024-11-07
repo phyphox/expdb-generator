@@ -40,6 +40,9 @@ jobs:
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
 
   # Run the job only with 'bool_files_changed' equals 'True'
+        # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
+      # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
+      # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
@@ -53,10 +56,7 @@ jobs:
           version: 3.5
       - name: run_pandoc
         run: >
-          # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
           $ONLY_STANDALONE_OUTPUT_TYPES = "latex pdf html docx odt"
-          # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
-          # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
           parallel --jobs 0 \
             pandoc --from markdown {} --to native -o '{.}.ast' ';'\
             for i in $ONLY_STANDALONE_OUTPUT_TYPES';' do \

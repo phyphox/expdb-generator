@@ -50,7 +50,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./scripts
+        working-directory: .
     env:
       list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:

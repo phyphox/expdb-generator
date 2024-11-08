@@ -59,8 +59,8 @@ jobs:
           Only_Standalone_Output_Types: "latex pdf html docx odt"
         run: |
           parallel --jobs 0 \
-            pandoc --from markdown {} --to native -o '{.}.ast' ';'\
+            pandoc --from markdown --to native {} -o '{.}.ast' ';'\
             for i in $Only_Standalone_Output_Types';' do \
               pandoc --from native '{.}.ast' --standalone -o '{.}.$i' ';' \
             done';' \
-            rm '{.}.ast' ::: $env:list_changed_files
+            rm '{.}.ast' ::: $list_changed_files

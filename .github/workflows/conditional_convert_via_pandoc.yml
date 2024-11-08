@@ -47,10 +47,6 @@ jobs:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
     if: needs.condition_check_files.outputs.bool_files_changed == 'True'
-    defaults:
-      run:
-        shell: bash
-        working-directory: scripts/
     env:
       list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:
@@ -59,4 +55,4 @@ jobs:
         with:
           version: 3.5
       - name: run_pandoc
-        run: ./pandoc.sh $list_changed_files
+        run: bash ${GITHUB_WORKSPACE}/scripts/pandoc.sh $list_changed_files

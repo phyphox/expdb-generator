@@ -61,6 +61,6 @@ jobs:
           parallel --jobs 0 \
             pandoc --from markdown --to native {} -o '{.}.ast' ';'\
             for i in $Only_Standalone_Output_Types';' do \
-              pandoc --from native '{.}.ast' --standalone -o '{.}.$i' ';' \
+              pandoc --from native --standalone '{.}.ast' -o '{.}.$i' ';' \
             done';' \
-            rm '{.}.ast' ::: $env:list_changed_files
+            rm '{.}.ast' ::: $list_changed_files

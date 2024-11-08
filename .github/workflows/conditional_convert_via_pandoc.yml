@@ -49,7 +49,7 @@ jobs:
     if: needs.condition_check_files.outputs.bool_files_changed == 'True'
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./../../
     env:
       list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
     steps:

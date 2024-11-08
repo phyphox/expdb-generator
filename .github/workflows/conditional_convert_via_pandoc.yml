@@ -29,14 +29,14 @@ jobs:
       id: check_file_changed
       run: |
         # Look only for changed files (A - added, M - modified) and return their names (the specific changes are irrelevant)
-        $diff = git diff --name-only --diff-filter=AM "HEAD^" HEAD
+        $diff=git diff --name-only --diff-filter=AM "HEAD^" HEAD
 
         # Filter the files under content/ with the .md extension excluding the Hugo associated _index.md files
-        $FilesDiff = $diff | Where-Object { $_ -match 'content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
-        $HasDiff = $FilesDiff.Length -gt 0
+        $FilesDiff=$diff | Where-Object { $_ -match 'content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
+        $HasDiff=$FilesDiff.Length -gt 0
 
         # test
-        echo FilesDiff
+        echo "$FilesDiff"
 
         # Set the output named "bool_files_changed"
         echo "bool_files_changed=$HasDiff" >> $env:GITHUB_OUTPUT

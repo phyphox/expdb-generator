@@ -63,4 +63,4 @@ jobs:
             for i in $Only_Standalone_Output_Types';' do \
               pandoc --from native '{.}.ast' --standalone -o '{.}.$i' ';' \
             done';' \
-            rm '{.}.ast' ::: $list_changed_files
+            rm '{.}.ast' ::: $env:list_changed_files

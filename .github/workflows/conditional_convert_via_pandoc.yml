@@ -55,4 +55,4 @@ jobs:
         with:
           version: 3.5
       - name: run_pandoc
-        run: bash ${GITHUB_WORKSPACE}/pandoc.sh $list_changed_files
+        run: bash ${{ github.workspace }}/pandoc.sh $list_changed_files

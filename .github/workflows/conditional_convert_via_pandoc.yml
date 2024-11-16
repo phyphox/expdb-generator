@@ -57,7 +57,8 @@ jobs:
           --rm -v ${{ github.workspace }}:/workspace 
           -w /workspace 
           pandoc/latex:3.5 
-          bash ./pandoc.sh ${{ env.list_changed_files }}
+          bash -c 'chmod +x /workspace/pandoc.sh && /workspace/pandoc.sh "${{ needs.condition_check_files.outputs.list_changed_files }}"'
+          # bash ./pandoc.sh ${{ env.list_changed_files }}
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

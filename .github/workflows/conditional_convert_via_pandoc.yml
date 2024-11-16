@@ -56,5 +56,6 @@ jobs:
           version: 3.5
       - name: run_pandoc
         run: |
-          pwd
+          echo $list_changed_files
+          ls
           bash ${{ github.workspace }}/pandoc.sh $list_changed_files

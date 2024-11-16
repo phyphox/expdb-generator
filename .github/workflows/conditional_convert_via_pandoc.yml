@@ -56,9 +56,9 @@ jobs:
           docker run 
           --rm -v ${{ github.workspace }}:/workspace 
           -w /workspace 
+          --build-arg list_changed_files=$list_changed_files
           pandoc/latex:3.5 
-          bash -c 'chmod +x /workspace/pandoc.sh && /workspace/pandoc.sh "${{ needs.condition_check_files.outputs.list_changed_files }}"'
-          # bash ./pandoc.sh ${{ env.list_changed_files }}
+          bash ./pandoc.sh "$list_changed_files"
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

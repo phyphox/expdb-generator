@@ -53,7 +53,7 @@ jobs:
         uses: docker://pandoc/latex:3.5
         with:
           args: bash ./pandoc.sh "${{ env.list_changed_files }}"
-      - name: Commit files # transfer the new files back into the repository
+      - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"
           git add ./content

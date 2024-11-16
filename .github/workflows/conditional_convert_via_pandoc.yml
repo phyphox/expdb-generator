@@ -17,7 +17,6 @@ jobs:
   # Seperate jobs to be able to possibly use condition_check_files for other tasks as well
   condition_check_files:
     runs-on: 'ubuntu-22.04'
-    # Declare outputs for next jobs
     outputs:
       bool_files_changed: ${{ steps.check_file_changed.outputs.bool_files_changed }}
       list_changed_files: ${{ steps.check_file_changed.outputs.list_changed_files }}
@@ -28,7 +27,7 @@ jobs:
     - shell: pwsh
       id: check_file_changed
       run: |
-        # Look only for changed files (A - added, M - modified) and return their names (the specific changes are irrelevant)
+        # Look only for changed files (A - added, M - modified) and return their path+name (the specific changes are irrelevant)
         $diff=git diff --name-only --diff-filter=AM "HEAD^" HEAD
 
         # Filter the files under content/ with the .md extension excluding the Hugo associated _index.md files
@@ -58,7 +57,8 @@ jobs:
         with:
           fetch-depth: 2
       - name: run_pandoc
-        run: |
-          echo "$list_changed_files"
-          bash ./pandoc.sh "$list_changed_files"
-      - uses: docker://pandoc/latex:3.5
+        uses: docker://pandoc/latex:3.5
+        with:
+          run: |
+            echo "$list_changed_files"
+            bash ./pandoc.sh "$list_changed_files"

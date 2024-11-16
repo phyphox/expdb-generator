@@ -35,7 +35,6 @@ jobs:
         $FilesDiff=$diff | Where-Object { $_ -match 'content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
         $HasDiff=$FilesDiff.Length -gt 0
 
-        echo "$FilesDiff"
         # Set the output named "bool_files_changed"
         echo "bool_files_changed=$HasDiff" >> $env:GITHUB_OUTPUT
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
@@ -44,19 +43,21 @@ jobs:
         # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
       # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
       # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
-      #bash ${{ github.workspace }}/pandoc.sh $list_changed_files
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
-    if: needs.condition_check_files.outputs.bool_files_changed == 'True'
+    if: needs.condition_check_files.outputs.bool_files_changed == 'true'
     env:
-      list_changed_files: ${{ needs.condition_changed_files.outputs.list_changed_files }}
+      list_changed_files: ${{ needs.condition_check_files.outputs.list_changed_files }}
     steps:
       - name: install_pandoc
         uses: pandoc/actions/setup@v1
         with:
           version: 3.5
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
       - name: run_pandoc
         run: |
           echo "$list_changed_files"
-          echo ls
+          bash ./pandoc.sh "$list_changed_files"

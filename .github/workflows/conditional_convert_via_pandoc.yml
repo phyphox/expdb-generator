@@ -39,6 +39,12 @@ jobs:
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
 
   # Run the job only with 'bool_files_changed' equals 'True'
+
+
+#       - uses: actions/upload-artifact@v4  # To save the files in the repo
+  #        with:
+  #          name: pandoc-artifact
+  #          path: content/
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
@@ -57,11 +63,15 @@ jobs:
           packages: |
             scheme-basic
             hyperref
-      - name: run_pandoc
+            xcolor
+            iftex
+      - name: Run Pandoc
         run: |
           echo "$list_changed_files"
           bash ./pandoc.sh "$list_changed_files"
-      - uses: actions/upload-artifact@v4  # To save the files in the repo
-        with:
-          name: pandoc-artifact
-          path: content/
+      - name: Commit files # transfer the new files back into the repository
+        run: |
+          git config --local user.name "GH_Action_Bot"
+          git add ./content
+          git commit -m "GH Action: Pandoc | New output for changed files"
+          git push -f origin main

@@ -1,8 +1,9 @@
 ---
 title: Testlauf
-date: '2024-03-20T14:15:05+01:00'
+date: '2024-03-20'
 last_mod: '2024-03-20T14:15:05+01:00'
-author: "Marcel Kaiser"
+author: 
+  - Marcel Kaiser
 taxonomies:
   target_group: ISO...
   difficulty: easy
@@ -16,4 +17,4 @@ category:
 ---
 
 ## Am Anfang ...
-... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusper! Wooop!
+... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusprig! Wooop!

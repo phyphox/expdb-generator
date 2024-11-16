@@ -3,7 +3,9 @@ title: '{{ replace .Name "-" " " | title }}'
 date: '{{ .Date }}'
 translationKey: # done by phyphox Team
 version: '0.4.2'
-author: # Your Name
+author: 
+  - # Your Name
+  - # Another Name
 CreativeCommons: ['0', 'BY', 'BY-SA']  # choose. Remove everything else
 categories:  # Remove all categories which are not accurate
   - 'Waves and Sound and Optics'
@@ -38,12 +40,14 @@ tags: # All Tag start upper-case expect for 'phyphox'. This list can be expanded
   - 'Experiment'
   - 'Gyroscope'
   - 'Coil'
+  - 'Shakespeare'
+  - 'Demonstration'
 ---
 # {{ replace .Name "-" " " | title }}
 *Put short description of the content here*
 
 <!--more--> 
-<!-- (This comment can be deleted) Only what comes before the `<!--more--` comment is considered for a summary -->
+<!-- What is written before the `<!--more--` comment is used for the summary -->
 
 ## A Midsummer Night's Dream
 
@@ -115,6 +119,8 @@ You might want to use an [online editor](https://www.tablesgenerator.com/markdow
 | Paragraph |    Text     | Here's how to escape the pipe: \| |
 
 </div>
+
+Have fun with all these possibilities :v:
 
 ## Literature and sources
 

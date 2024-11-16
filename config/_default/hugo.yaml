@@ -65,6 +65,7 @@ taxonomies:
   category: categories
   tag: tags
 
+enableEmoji: true
 markup:
   goldmark:
     extensions:

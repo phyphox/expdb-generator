@@ -54,11 +54,11 @@ are a rough estimate on how much effort should be put into the corresponding tas
 - [ ] Fill out the Frontmatter
 
 **Work Sheet**
-- [ ] Add explanatory and instructing text & formulas (15%) 
+- [ ] Add explanatory and instructing text & formulas (10%) 
 - [ ] Add figures (50%)
   - [ ] read the instructions in documentation
   - [ ] make sure to include them in the correct folder
-- [ ] Develop tasks (and solutions) (35%)
+- [ ] Develop tasks (and solutions) (40%)
   - [ ] comprehension
   - [ ] measurement
   - [ ] calculation

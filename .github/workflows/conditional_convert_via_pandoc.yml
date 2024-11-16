@@ -50,9 +50,14 @@ jobs:
         with:
           fetch-depth: 2
       - name: Run Pandoc in Docker
-        uses: docker://pandoc/latex:3.5
-        with:
-          args: bash ./pandoc.sh "${{ env.list_changed_files }}"
+        # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
+        # $list_changed_files contains relative paths) and executes the script.
+        run: >-
+          docker run 
+          --rm -v ${{ github.workspace }}:/workspace 
+          -w /workspace 
+          pandoc/latex:3.5 
+          bash ./pandoc.sh ${{ env.list_changed_files }}
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

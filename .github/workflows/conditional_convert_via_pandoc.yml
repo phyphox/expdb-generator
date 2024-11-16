@@ -41,6 +41,8 @@ jobs:
   # Run the job only with 'bool_files_changed' equals 'True'
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
+    container:
+      image: pandoc/latex:3.5
     needs: [ condition_check_files ]
     if: needs.condition_check_files.outputs.bool_files_changed == 'true'
     env:
@@ -52,12 +54,7 @@ jobs:
       - name: Run Pandoc in Docker
         # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
         # $list_changed_files contains relative paths) and executes the script.
-        run: >-
-          docker run
-          --rm -v ${{ github.workspace }}:/workspace
-          -w /workspace
-          pandoc/latex:3.5
-          bash ./pandoc.sh ${{ env.list_changed_files }}
+        run: ./pandoc.sh ${{ env.list_changed_files }}
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

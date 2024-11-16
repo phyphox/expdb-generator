@@ -39,13 +39,6 @@ jobs:
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
 
   # Run the job only with 'bool_files_changed' equals 'True'
-
-
-
-      #      - name: install_pandoc
-      #        uses: pandoc/actions/setup@v1
-      #        with:
-      #          version: 3.5
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
@@ -53,12 +46,22 @@ jobs:
     env:
       list_changed_files: ${{ needs.condition_check_files.outputs.list_changed_files }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4  # In order to find the script pandoc.sh
         with:
           fetch-depth: 2
-      - name: run_pandoc
-        uses: docker://pandoc/latex:3.5
+      - uses: pandoc/actions/setup@v1
         with:
-          run: |
-            echo "$list_changed_files"
-            bash ./pandoc.sh "$list_changed_files"
+          version: 3.5
+      - uses: teatimeguest/setup-texlive-action@v3  # To convert to pdf (from latex)
+        with:
+          packages: |
+            scheme-basic
+            hyperref
+      - name: run_pandoc
+        run: |
+          echo "$list_changed_files"
+          bash ./pandoc.sh "$list_changed_files"
+      - uses: actions/upload-artifact@v4  # To save the files in the repo
+        with:
+          name: pandoc-artifact
+          path: content/

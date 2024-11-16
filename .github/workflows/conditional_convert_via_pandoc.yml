@@ -49,17 +49,15 @@ jobs:
       - uses: actions/checkout@v4  # In order to find the script pandoc.sh
         with:
           fetch-depth: 2
-
-        # This is an attempt to work via docker, but not yet functioning
-      #- name: Run Pandoc in Docker
-      #  # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
-      #  # $list_changed_files contains relative paths) and executes the script.
-      #  run: >-
-      #    docker run
-      #    --rm -v ${{ github.workspace }}:/workspace
-      #    -w /workspace
-      #    pandoc/latex:3.5
-      #    # bash ./pandoc.sh ${{ env.list_changed_files }}
+      - name: Run Pandoc in Docker
+        # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
+        # $list_changed_files contains relative paths) and executes the script.
+        run: >-
+          docker run
+          --rm -v ${{ github.workspace }}:/workspace
+          -w /workspace
+          pandoc/latex:3.5
+          bash ./pandoc.sh ${{ env.list_changed_files }}
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

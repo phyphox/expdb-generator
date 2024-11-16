@@ -16,4 +16,4 @@ category:
 ---
 
 ## Am Anfang ...
-... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusper! Woop!
+... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusper! Wup!

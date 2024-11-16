@@ -6,7 +6,7 @@ name: conditional_convert_via_pandoc
 # Written by Marcel Kaiser
 #
 # published: 2024-10-29
-# last edit: 2024-11-07
+# last edit: 2024-11-16
 #
 on:
   push:
@@ -35,6 +35,7 @@ jobs:
         $FilesDiff=$diff | Where-Object { $_ -match 'content/' -and $_ -match '.md$' -and -not ($_ -match '_index.md') }
         $HasDiff=$FilesDiff.Length -gt 0
 
+        echo "$FilesDiff"
         # Set the output named "bool_files_changed"
         echo "bool_files_changed=$HasDiff" >> $env:GITHUB_OUTPUT
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
@@ -43,6 +44,7 @@ jobs:
         # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
       # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
       # You can easily add individual conversion rules by using pandoc after the 'done' part. Keep in mind to finish all non-comment lines with backslash
+      #bash ${{ github.workspace }}/pandoc.sh $list_changed_files
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
     needs: [ condition_check_files ]
@@ -56,6 +58,5 @@ jobs:
           version: 3.5
       - name: run_pandoc
         run: |
-          echo $list_changed_files
-          ls
-          bash ${{ github.workspace }}/pandoc.sh $list_changed_files
+          echo "$list_changed_files"
+          echo ls

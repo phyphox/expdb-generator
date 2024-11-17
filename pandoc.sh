@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # List types which will only use --standalone. You can easily add more extensions if you're fine with this setting
 Only_Standalone_Output_Types="latex pdf html docx odt"
 # Use GNU Parallel to work each file on its own cpu core.

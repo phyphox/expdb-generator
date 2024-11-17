@@ -54,7 +54,11 @@ jobs:
       - name: Run Pandoc in Docker
         # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
         # $list_changed_files contains relative paths) and executes the script.
-        run: ./pandoc.sh ${{ env.list_changed_files }}
+        run: |
+          if ! dpkg-query -W -f='${Status}' parallel  | grep "ok installed"; 
+            then apt install parallel; 
+          fi
+          ./pandoc.sh ${{ env.list_changed_files }}
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

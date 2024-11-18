@@ -3,10 +3,11 @@ name: conditional_convert_via_pandoc
 # A script to check for changed and added .md files in content/ and convert those with pandoc (except for _index.md)
 #
 # Thanks to Gérald Barré aka. meziantou for the basic template of the condition check
+# Thanks as well as to Azeem, mb21, Benjamin W., KamilCuk & Teemu Risikko over at stackoverlow.com
 # Written by Marcel Kaiser
 #
 # published: 2024-10-29
-# last edit: 2024-11-16
+# last edit: 2024-11-18
 #
 on:
   push:
@@ -38,11 +39,9 @@ jobs:
         echo "bool_files_changed=$HasDiff" >> $env:GITHUB_OUTPUT
         echo "list_changed_files=$FilesDiff" >> $env:GITHUB_OUTPUT
 
-  # Run the job only with 'bool_files_changed' equals 'True'
+  # Run the job only with 'bool_files_changed' equals 'true'
   conditional_pandoc:
     runs-on: 'ubuntu-22.04'
-    container:
-      image: pandoc/latex:3.5
     needs: [ condition_check_files ]
     if: needs.condition_check_files.outputs.bool_files_changed == 'true'
     env:
@@ -51,14 +50,17 @@ jobs:
       - uses: actions/checkout@v4  # In order to find the script pandoc.sh
         with:
           fetch-depth: 2
-      - name: Run Pandoc in Docker
-        # This is a one-liner. It gets a Docker Image of pandoc/latex:3.5 working directly in the workspace (because
-        # $list_changed_files contains relative paths) and executes the script.
+      - uses: pandoc/actions/setup@v1
+        with:
+          version: 3.5
+      - uses: teatimeguest/setup-texlive-action@v3  # To convert to pdf (from latex)
+        with:
+          package-file: |
+            .github/workflows/pandoc_texlive_packages.tex
+      - name: Run Pandoc
         run: |
-          if ! dpkg-query -W -f='${Status}' parallel  | grep "ok installed"; 
-            then apt install parallel; 
-          fi
-          ./pandoc.sh ${{ env.list_changed_files }}
+          echo "$list_changed_files"
+          bash ./pandoc.sh "$list_changed_files"
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"

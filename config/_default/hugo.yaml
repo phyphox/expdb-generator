@@ -6,7 +6,7 @@ params:
     phone:
   math: true
 
-defaultContentLanguage: de
+#defaultContentLanguage: de
 #defaultContentLanguageInSubdir: true
 
 # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;

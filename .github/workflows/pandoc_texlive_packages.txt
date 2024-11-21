@@ -31,3 +31,4 @@ csquote
 parskip
 xurl
 footnote
+etoolbox

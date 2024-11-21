@@ -16,3 +16,7 @@ tags:
 
 ## In the beginning...
 ... was the trial which shall seal their fate.
+
+{{< img asset="sunset.jpg" alt="Blick durch schneebedecktes Gehölz auf ein einsames Haus, Polen." caption="Bild von Sylwia Mazurek, CC-0" mouse="Brrr, das muss kalt sein" width="210px" >}}
+
+{{< youtube _rWjWE4gfDk >}}

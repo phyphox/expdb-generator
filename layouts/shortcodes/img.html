@@ -1,24 +1,43 @@
 <!--  required:
-    src: where to be found
+    src: if image is stored in relative short path or is a URL
+        OR asset: if the image is stored in assets/images
 	alt: alternative text
 	  optional:
-	link: if different from src
+	link: if clicking on the image should open a different link than src
 	width: if it shouldn't spread the whole page
 	class: class of the figure for CSS
 	caption: caption
-	mouse: what the image says when moused over ("title" in HTML)
+	mouse: what the image says when mouse is hovered over ("title" in HTML)
 -->
 <figure {{ with .Get "class" }}class="{{.}}"{{ end -}}>
-    {{- with .Get "link"}}<a href="{{.}}">{{ else }}<a href="{{ .Get "src" }}">{{ end -}}
-    <img src="{{ .Get "src" }}" loading="lazy"
-        {{- .Get "alt" }} alt="{{ . -}}"
+    {{- with .Get "link"}}
+        <a href="{{.}}">
+    {{ else }}
+        <a href="{{ .Get "src" }}">
+    {{ end -}}
+    <img
+        {{- with .Get "src" }}
+            src="{{.}}"
+        {{ else with .Get "asset" }}
+            {{- $image := $.Page.Resources.GetMatch . -}}
+            {{ with $image }}
+                src="{{ .RelPermalink }}"
+            {{ end }}
+        {{ else}}
+            {{ errorf "The %q shortcode requires a 'src' or 'asset' argument. See %s" .Name .Position }}
+        {{ end -}}
+
+        alt="{{ .Get "alt" }}" loading="lazy"
+
         {{- with .Get "mouse" }} title="{{.}}"{{ end -}}
         {{- with .Get "width" }} width="{{.}}"{{ end -}}
     >
-        {{- if .Get "link"}}</a>{{ end -}}
+        {{- with .Get "link"}}{{.}}{{ end -}}
+    </a>
+
     {{- with .Get "caption" -}}
-        <figcaption>
-            {{- . -}}
-        </figcaption>
+    <figcaption>
+        {{- . -}}
+    </figcaption>
     {{- end -}}
 </figure>

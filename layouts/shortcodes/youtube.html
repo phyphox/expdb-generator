@@ -1,0 +1,11 @@
+<!--  required:
+    set the address of the youtube code (the one following ?v= in the address) as the first parameter. For example:
+
+    youtube _rWjWE4gfDk
+-->
+
+<div class="embed video-player">
+    <iframe class="youtube-player" type="text/html" width="640" height="385" src="https://www.youtube.com/embed/{{ index .Params 0 }}" allowfullscreen frameborder="0">
+    </iframe>
+</div>
+

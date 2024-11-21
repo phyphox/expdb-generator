@@ -1,0 +1,1 @@
+Placeholder to test if a security.txt can be found in this directory

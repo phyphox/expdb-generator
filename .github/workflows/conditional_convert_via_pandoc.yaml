@@ -56,7 +56,7 @@ jobs:
       - uses: teatimeguest/setup-texlive-action@v3  # To convert to pdf (from latex)
         with:
           package-file: |
-            .github/workflows/pandoc_texlive_packages.tex
+            .github/workflows/pandoc_texlive_packages.txt
       - name: Run Pandoc
         run: |
           echo "$list_changed_files"

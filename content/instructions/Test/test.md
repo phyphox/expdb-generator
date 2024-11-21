@@ -17,6 +17,5 @@ category:
 ---
 
 ## Am Anfang ...
-... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusper! Woopwoop!
+... war der Testlauf, der ihr aller Schicksal besiegeln sollte. Jetzt neu mit KI-Panade! Knusper! Woop!
 
-Ein hoffentlich finaler Git Action Test. Jetzt aber.

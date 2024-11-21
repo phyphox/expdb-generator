@@ -1,6 +1,3 @@
-%# long list of packages required by Pandoc (s. https://pandoc.org/MANUAL.html#creating-a-pdf)
-%# to create pdf files via latex->texlive
-
 amsfonts
 amsmath
 lm
@@ -32,3 +29,6 @@ parskip
 xurl
 footnote
 etoolbox
+
+# long list of packages required by Pandoc (https://pandoc.org/MANUAL.html#creating-a-pdf)
+# to create pdf files via latex->texlive

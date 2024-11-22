@@ -1,0 +1,19 @@
+<div class="categories">
+    <h3>{{- i18n "categories" -}}</h3>
+    <ul>
+        <!-- {{/*
+        {{ range .Site.RegularPages }}
+            {{ range .Params.categories }}
+                <li><a href="{{ "/" | relLangURL }}{{ . | urlize }}">{{ i18n . }}</a></li>
+            {{ end }}
+        {{ end }}
+*/}}-->
+        {{ $categories := slice }}
+        {{ range .Site.RegularPages }}
+        {{ $categories = $categories | append .Params.categories }}
+        {{ end }}
+        {{ range $category := $categories | uniq | sort }}
+        <li><a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}">{{ i18n $category }}</a></li>
+        {{ end }}
+    </ul>
+</div>

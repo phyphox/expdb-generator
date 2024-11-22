@@ -1,0 +1,27 @@
+<!-- {{/*
+
+<div>
+    {{ $tags := $.Site.Taxonomies.tags }}
+    {{ $v1 := where $tags "Count" "ge" 3 }}
+    {{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+    {{ range $v2 }}
+    {{ if .Term }}
+    {{ $tagURL := printf "tags/%s" .Term | relURL }}
+    <a href="{{ $tagURL }}" class="btn btn-default" role="button" style="text-transform: uppercase; font-size: 12px; padding-right: 5px; padding-left: 5px;" >{{ .Term }} <span class="badge">({{ .Count }})</span></a>
+    {{ end }}
+    {{ end }}
+</div>
+
+<ul id="tags-single">
+    <li>{{- i18n "tagged_as" -}}:</li>
+    {{ range .Param "categories" }}
+    <li><a href="{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+</ul>
+
+
+*/}} -->
+
+{{ range $i, $e := $.Site.Taxonomies.categories -}}
+<a href='{{ "/" | relLangURL }}{{ . | urlize }}'>{{ $e | humanize }}</a>
+{{- end -}}

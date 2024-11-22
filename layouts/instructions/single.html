@@ -1,6 +1,17 @@
 {{- define "main" -}}
-    <h1>{{- .Params.Title -}}</h1>
-    <p>{{- .Params.Author -}}, {{- .Date | time.Format ":date_medium" -}}</p>
-    <hr />
+  <h1>{{- .Params.Title -}}</h1>
+  <p>{{- .Params.Author -}},&nbsp; {{- .Date | time.Format ":date_medium" -}}</p>
+  {{- partial "download.html" -}}
+
+  <br />
+  {{- with .Params.tags -}}
+  {{- i18n "tags" -}}:&nbsp;{{- delimit . ", " -}}
+  {{- end -}}
+  <br />
+  {{- with .Params.categories -}}
+  {{- i18n "categories" -}}:&nbsp;{{- delimit . ", " -}}
+  {{- end -}}
+
+  <hr />
     {{- .Content -}}
 {{- end -}}

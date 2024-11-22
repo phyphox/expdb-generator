@@ -1,0 +1,38 @@
+<label for="fileType">{{- i18n "downloadAs" -}}</label>
+<select id="fileType">
+  <!-- dynamically filled -->
+</select>
+<a onclick="downloadFile()">
+  <button type="button">{{- i18n "startDownload" -}}</button></a>
+
+<script>
+  // Get filename.md as base for the downloadable files
+  const currentFileName = window.location.href.split('/').at(-2)
+  console.log(currentFileName)
+
+  // data types NO CATCH FOR NONEXISTENT FILES; provide everything listed here with pandoc
+  const fileTypes = ["pdf", "tex", "html", "odt", "docx"];
+
+  // dropdown-menu dynamically filled with the aforementioned list
+  const fileTypeSelect = document.getElementById('fileType');
+  fileTypes.forEach(type => {
+    const option = document.createElement('option');
+    option.value = `${currentFileName}.${type}`;
+    option.textContent = type;
+    fileTypeSelect.appendChild(option);
+  });
+  document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage['fileType']) { // if job is set
+      fileTypeSelect.value = localStorage['fileType']; // set the value
+    }
+    fileTypeSelect.onchange = function () {
+      localStorage['fileType'] = this.value; // change localStorage on change
+    }
+  });
+
+  function downloadFile() {
+    const fileType = document.getElementById('fileType').value;
+    window.location.href = fileType;
+    window.location.download = fileType;
+  }
+</script>

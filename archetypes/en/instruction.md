@@ -28,6 +28,7 @@ sensors:  # used by phyphox. Remove those which are not used
   - 'Current'
   - 'Speaker'
 levels: ['0', '1', '2a', '2b', '3', '6', '7']  # see doc for explanation. Remove everything else
+video: ['no', 'English', 'Localized', 'Silent'] # choose accordingly
 requiredMaterials:
   - 'Smartphone only'
   - 'Household items'
@@ -63,12 +64,12 @@ are a rough estimate on how much effort should be put into the corresponding tas
   - What to do (ordered by relevance):
     - [ ] Drawings of the setup
     - [ ] Visualizing the physical phenomenon
-    - [ ] Pictures of an actual setup 
+    - [ ] Pictures of an actual setup
+- [ ] Experienced problems & solutions (20%) 
 - [ ] Information: (15%)
   - [ ] Needed materials
   - [ ] Time effort
   - [ ] Skills developed
-- [ ] Experienced problems & solutions (20%)
 - [ ] Written explanation: (15%)
   - [ ] How to set up 
   - [ ] How to measure 

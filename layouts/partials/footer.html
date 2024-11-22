@@ -1,7 +1,9 @@
 {{- with .Params.hide_footer -}}
 <!-- No footer here! -->
 {{- else -}}
+<hr/>
 <footer>
-    Phyphox {{ i18n "database" }}, 2024{{- if ne ($y := now.Year)  2024 -}}{{- print "-" $y -}}{{- end -}}
+    phyphox&nbsp;{{- i18n "database" -}}, 2024 {{- if ne ($y := now.Year)  2024 -}} {{- print "-" $y -}} {{- end -}}
+    &nbsp;&#124;&nbsp;<a href="">{{- i18n "imprint" -}}</a>&nbsp;&#124;&nbsp;<a href="">{{- i18n "accessibilityStatement" -}}</a>&nbsp;&#124;&nbsp;<a href="https://github.com/phyphox/expdb-generator">GitHub</a>
 </footer>
 {{- end -}}

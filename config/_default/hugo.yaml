@@ -4,30 +4,81 @@ params:
     name: II. Lehrstuhl für Physik, RWTH Aachen
     email:
     phone:
+  math: true
 
 defaultContentLanguage: de
-defaultContentLanguageInSubdir: true
 
+# all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;
+# & it is probable that English & German will get the most support.
 languages:
-  de:
-    disabled: false
-    languageCode: de-DE
-    languageDirection: ltr
-    languageName: Deutsch
-    params:
-      subtitle: Die offizielle Sammlung von Ressourcen für Phyphox-Experimente.
-    title: Phyphox Datenbank Prototyp
-    weight: 2
-
   en:
+    contentDir: content/en
+    permalinks:
+      page:
+        instructions: /instructions/:slug/
+
+    taxonomies:
+      category: "categories"
+      tag: "tags"
+
     disabled: false
     languageCode: en-US
     languageDirection: ltr
     languageName: English
     params:
-      subtitle: The Official Database For Various Phyphox Experiment Resources.
-    title: Phyphox Database Prototype
-    weight: 1
+      subtitle: The Official Database for phyphox Experiment Resources.
+    title: phyphox Database Prototype
 
-  # all new languages should have a weight >2 as hugo uses the weight to decide which language to use as fallback;
-  # it is probable that English & German will get the most support.
+    weight: 1
+  de:
+    contentDir: content/de
+
+    permalinks:
+      categories: "/:section/:slug"
+      page:
+        instructions: /anleitungen/:slug/
+      section:
+        instructions: /anleitungen/
+
+    taxonomies:
+      category: "Kategorien"
+      tag: "Stichwörter"
+
+    disabled: false
+    languageCode: de-DE
+    languageDirection: ltr
+    languageName: Deutsch
+    params:
+      subtitle: Die offizielle Sammlung von phyphox-Ressourcen.
+    title: phyphox Datenbank Prototyp
+    weight: 2
+
+# theme: onion
+
+#module:
+# imports:
+#  - path: github.com/gohugoio/hugo-mod-jslibs-dist/alpinejs
+
+taxonomies:
+  category: categories
+  tag: tags
+
+enableEmoji: true
+markup:
+  goldmark:
+    extensions:
+      passthrough:
+        delimiters:
+          block:
+            - - \[
+              - \]
+            - - $$
+              - $$
+          inline:
+            - - \(
+              - \)
+        enable: true
+  tableOfContents:
+    startLevel: 2
+    endLevel: 6
+    ordered: false

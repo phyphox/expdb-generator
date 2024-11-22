@@ -1,14 +1,25 @@
-- id: home
-  translation: "Start"
-- id: instructions
-  translation: "Anleitungen"
-- id: overview
-  translation: "Übersicht"
-- id: translations
-  translation: "Übersetzungen"
-- id: skipToMainContent
-  translation: "Zum Inhalt springen"
-- id: filter
-  translation: "Filter"
-- id: database
-  translation: "Datenbank"
+- Astronomy: "Astronomie"
+- Electricity and Magnetism: "Elektrizität und Magnetismus"
+- Mechanics: "Mechanik"
+- Quantum: "Quantenphysik"
+- Thermal and Statistical: "Thermodynamik und Statistik"
+- Waves and Sound and Optics: "Wellen, Schall und Optik"
+- accessibilityStatement: "Barrierefreiheit"
+- categories: "Kategorien"
+- database: "Datenbank"
+- description: "Beschreibung"
+- downloadAs: "Diese Datei herunterladen als"
+- filter: "Filter"
+- home: "Start"
+- imprint: "Impressum"
+- instructions: "Anleitungen"
+- logo: "Symbolbild"
+- noLogo: "Kein Logo verfügbar"
+- overview: "Übersicht"
+- showing: "Zeige"
+- skipToMainContent: "Zum Inhalt springen"
+- startDownload: "Start"
+- tags: "Stichwörter"
+- translations: "Übersetzungen"
+- version: "Version"
+- website: "Webseite"

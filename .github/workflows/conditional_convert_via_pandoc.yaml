@@ -60,7 +60,7 @@ jobs:
       - name: Run Pandoc
         run: |
           echo "$list_changed_files"
-          bash ./pandoc.sh "$list_changed_files"
+          bash ./pandoc.sh $list_changed_files
 #      - name: Commit files # transfer the new files into the repository
 #        run: |
 #          git config --local user.name "GH_Action_Bot"

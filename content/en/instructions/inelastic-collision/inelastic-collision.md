@@ -100,7 +100,7 @@ Finally, the initial height \(h_0\) is extrapolated by assuming that the ratio o
 \end{align*}
 
 Note, that in practice, this usually underestimates the initial height because the amount of energy transformed into heat on impact typical increases with higher impact velocities. Therefore, the first impact with the highest impact velocity usually has a higher "energy loss" than the second, so by assuming it to be the same on both impacts means that the energy before the first impact is typically underestimated.
-
+ 
 ## Problems and Solutions
 
 * **Phyphox misses some or all impacts.**

@@ -61,7 +61,7 @@ Minimum delay determines how long phyphox will wait after an event before consid
 
 ## Execution
 
-Make sure phyphox is running (top-right corner shows a pause symbol ⏸ instead of the triangular start button ⏵). Reset your measurements by pressing the "reset" button the "heights" or "energy" tab. Drop the ball next to the phones microphone. Optionally you can hold a tape measure next to the dropping ball for reference.
+Make sure phyphox is running (top-right corner shows a pause symbol instead of the triangular start button). Reset your measurements by pressing the "reset" button the "heights" or "energy" tab. Drop the ball next to the phones microphone. Optionally you can hold a tape measure next to the dropping ball for reference.
 
 The Heights tab will show up to five time intervals that correspond to six impacts on your surface.
 
@@ -73,7 +73,7 @@ The energy tab shows energy data corresponding to the heights that have actually
 
 ## Physics background and analysis details
 
-Phyphox records audio samples from the phone's microphone and considers them sequentially (like the "acoustic stopwatch" configuration). The samples are normalized to a range of -1 to 1, although the exact meaning can differ from phone to phone due to different recording hardware and processing. If a sample is above the trigger threshold set by the user, this is counted as an event and its time is noted. The time is based on the sampling rate of the recording, which is typically 48kHz (or in some cases 44.1kHz), resulting in a theoretical temporal resolution of 21μs (or 23μs). Note that in practice this resolution is severely limited by differences between the sounds from different bounces as well as dispersion and the shape of the waveform itself and phyphox only displays three decimals (1ms) while using the exact value internally.
+Phyphox records audio samples from the phone's microphone and considers them sequentially (like the "acoustic stopwatch" configuration). The samples are normalized to a range of -1 to 1, although the exact meaning can differ from phone to phone due to different recording hardware and processing. If a sample is above the trigger threshold set by the user, this is counted as an event and its time is noted. The time is based on the sampling rate of the recording, which is typically 48kHz (or in some cases 44.1kHz), resulting in a theoretical temporal resolution of \(21\,\mathrm{μs}\) (or \(23\,\mathrm{μs}\)). Note that in practice this resolution is severely limited by differences between the sounds from different bounces as well as dispersion and the shape of the waveform itself and phyphox only displays three decimals (1ms) while using the exact value internally.
 
 The next sound samples will be discarded until a minimum time interval set by "Minimum Delay" has passed. After this time the next sample above the threshold is noted as the next event and the time difference between subsequent events is shown as "Time 1", "Time 2", etc.
 

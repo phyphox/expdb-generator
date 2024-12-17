@@ -31,7 +31,7 @@ version: '0.1.0'
 {{< youtube ikvtPDwV1FE >}}
 
 ## Overview
-
+ 
 In this experiment, you drop a ball near the microphone of your phone onto a hard surface (i.e. a table). Phyphox will detect the sounds of each impact of the ball on the surface and use their timing to determine the drop height of the ball. It will show the maxima of its free fall parabola between each impact as well as the kinetic energy retained after each impact (relative to the initial energy).
 
 ### Topics covered

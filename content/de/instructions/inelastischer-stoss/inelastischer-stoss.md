@@ -31,7 +31,7 @@ version: '0.1.0'
 {{< youtube sqCEo4tj3e4 >}}
 
 ## Überblick
-
+ 
 In diesem Experiment lässt du einen Ball in der Nähe des Mikrofons deines Smartphones auf eine harte Oberfläche (z.B. einen Tisch) fallen. Phyphox erfasst die Geräusche bei jedem Aufprall des Balls auf der Oberfläche und verwendet deren Zeitpunkte, um die Fallhöhe des Balls zu bestimmen. Es zeigt die Maxima der Flugparabel zwischen den Aufprallen sowie die nach jedem Aufprall verbleibende kinetische Energie (relativ zur anfänglichen Energie).
 
 ### Abgedeckte Themen

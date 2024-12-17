@@ -1,3 +1,4 @@
+scheme-basic
 amsfonts
 amsmath
 lm

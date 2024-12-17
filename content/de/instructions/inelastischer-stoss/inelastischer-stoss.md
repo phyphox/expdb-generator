@@ -61,7 +61,7 @@ Der Parameter „Mindestvertzögerung“ verhindert Mehrfachzählungen einzelner
 
 ## Durchführung
 
-Stelle sicher, dass die Messung in phyphox läuft (Pause-Symbol ⏸ wird in der oberen rechten Ecke angezeigt statt des dreieckigen Startsymbols ⏵). Setze die Messwerte über die „Reset“-Taste im Reiter „Höhen“ oder „Energie“ zurück. Lass den Ball neben dem Mikrofon des Smartphones fallen. Optional kannst du ein Maßband daneben halten um eine Referenzhöhe zu bestimmen.
+Stelle sicher, dass die Messung in phyphox läuft (Pause-Symbol wird in der oberen rechten Ecke angezeigt statt des dreieckigen Startsymbols). Setze die Messwerte über die „Reset“-Taste im Reiter „Höhen“ oder „Energie“ zurück. Lass den Ball neben dem Mikrofon des Smartphones fallen. Optional kannst du ein Maßband daneben halten um eine Referenzhöhe zu bestimmen.
 
 Im Reiter „Höhen“ erscheinen bis zu fünf Zeitintervalle, die zu sechs Aufprallen gehören.
 

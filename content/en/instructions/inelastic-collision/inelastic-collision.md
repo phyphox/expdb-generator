@@ -61,7 +61,7 @@ Minimum delay determines how long phyphox will wait after an event before consid
 
 ## Execution
 
-Make sure phyphox is running (top-right corner shows a pause symbol ⏸ instead of the triangular start button ⏵). Reset your measurements by pressing the "reset" button the "heights" or "energy" tab. Drop the ball next to the phones microphone. Optionally you can hold a tape measure next to the dropping ball for reference.
+Make sure phyphox is running (top-right corner shows a pause symbol instead of the triangular start button). Reset your measurements by pressing the "reset" button the "heights" or "energy" tab. Drop the ball next to the phones microphone. Optionally you can hold a tape measure next to the dropping ball for reference.
 
 The Heights tab will show up to five time intervals that correspond to six impacts on your surface.
 

@@ -13,6 +13,7 @@ on:
   push:
     branches:
       - 'main' # Do the work exclusively for the branch deploying the website
+      - 'workflow-test'
 
 jobs:
   # Seperate jobs to be able to possibly use condition_check_files for other tasks as well
@@ -60,7 +61,7 @@ jobs:
       - name: Run Pandoc
         run: |
           echo "$list_changed_files"
-          bash ./pandoc.sh "$list_changed_files"
+          bash ./pandoc.sh $list_changed_files
 #      - name: Commit files # transfer the new files into the repository
 #        run: |
 #          git config --local user.name "GH_Action_Bot"

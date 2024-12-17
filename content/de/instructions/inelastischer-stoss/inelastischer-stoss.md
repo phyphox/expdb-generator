@@ -104,7 +104,7 @@ Die anfängliche Höhe \( h_0 \) wird extrapoliert, indem angenommen wird, dass 
 
 In der Praxis wird die anfängliche Höhe häufig unterschätzt, da bei höheren Aufprallgeschwindigkeiten mehr Energie in Wärme umgewandelt wird. Der erste Aufprall hat typischerweise die höchste Geschwindigkeit und verliert damit einen höheren Anteil seiner Energie. Die Annahme eines gleichen Verlustfaktors führt somit zu einer Unterschätzung der potentiellen Energie vor dem ersten Aufprall und damit zu einer Unterschätzung der Anfangshöhe.
 
- 
+
 ## Probleme und Lösungen
 
 * **Phyphox erfasst nicht alle Aufpralle.**  

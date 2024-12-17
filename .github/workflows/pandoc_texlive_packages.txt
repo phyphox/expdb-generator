@@ -17,6 +17,7 @@ setspace
 babel
 xeCJK
 lualatexja
+lualatex-math
 framed
 fontspec
 selnolig

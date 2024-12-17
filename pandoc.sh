@@ -4,7 +4,7 @@ Only_Standalone_Output_Types="latex pdf html docx odt"
 # Pandoc creates an AST (Abstract Syntax Tree); reuse this by saving/reading from .ast
 # You can add individual pandoc conversions by calling them after the 'done' part. Keep in mind to finish all lines with backslash
 parallel --jobs 0 \
-	pandoc --from markdown --to native './{}' -o './{.}.ast' ';'\
+	pandoc --from markdown+tex_math_single_backslash --to native './{}' -o './{.}.ast' ';'\
 	for i in "$Only_Standalone_Output_Types"';' do \
 		pandoc --from native './{.}.ast' --standalone --pdf-engine=lualatex -o './{.}.$i' ';' \
     done';' \

@@ -1,4 +1,3 @@
-scheme-basic
 amsfonts
 amsmath
 lm
@@ -15,6 +14,7 @@ soul
 geometry
 setspace
 babel
+babel-greek
 xeCJK
 lualatexja
 lualatex-math

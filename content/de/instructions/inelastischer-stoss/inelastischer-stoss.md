@@ -1,7 +1,5 @@
 ---
 translationKey: "Inelastic Collision Instruction"
-mainfont: DejaVuSerif.ttf
-
 title: "(In)elastischer Stoß"
 date: 2024-12-17T11:42:40+01:00
 draft: false
@@ -77,7 +75,7 @@ Der Reiter „Energie“ zeigt die zu den berechneten Höhen gehörenden Energie
 
 ## Physikalischer Hintergrund und Analysedetails
 
-Phyphox zeichnet Audiodaten des Smartphone-Mikrofons auf und analysiert sie sequentiell (wie in der Konfiguration „akustische Stoppuhr“). Die Samples werden auf einen Bereich von -1 bis 1 normalisiert, wobei die genaue Bedeutung dieser Amplitude je nach Aufnahmehardware des Smartphones variieren kann. Wenn ein Sample die vom Benutzer eingestellte Trigger-Schwelle überschreitet, wird dies als Ereignis gezählt und die Zeit vermerkt. Die Zeit basiert auf der Abtastrate, die typischerweise 48 kHz (oder in einigen Fällen 44,1 kHz) beträgt. Das ergibt eine theoretische zeitliche Auflösung von 21μs (bzw. 23μs). In der Praxis ist diese Auflösung jedoch durch Unterschiede in den Geräuschen verschiedener Aufpralle, Dispersion und die Form der Schallwelle begrenzt. Während phyphox intern exakte Werte nutzt, werden daher nur drei Dezimalstellen (1 ms) angezeigt.
+Phyphox zeichnet Audiodaten des Smartphone-Mikrofons auf und analysiert sie sequentiell (wie in der Konfiguration „akustische Stoppuhr“). Die Samples werden auf einen Bereich von -1 bis 1 normalisiert, wobei die genaue Bedeutung dieser Amplitude je nach Aufnahmehardware des Smartphones variieren kann. Wenn ein Sample die vom Benutzer eingestellte Trigger-Schwelle überschreitet, wird dies als Ereignis gezählt und die Zeit vermerkt. Die Zeit basiert auf der Abtastrate, die typischerweise 48 kHz (oder in einigen Fällen 44,1 kHz) beträgt. Das ergibt eine theoretische zeitliche Auflösung von \(21\,\mathrm{\mu s}\) (bzw. \(23\,\mathrm{\mu s}\)). In der Praxis ist diese Auflösung jedoch durch Unterschiede in den Geräuschen verschiedener Aufpralle, Dispersion und die Form der Schallwelle begrenzt. Während phyphox intern exakte Werte nutzt, werden daher nur drei Dezimalstellen (1 ms) angezeigt.
 
 Nach einem Ereignis werden die folgenden Audiosamples verworfen, bis die im unter „Mindestverzögerung“ eingestellte Zeit verstrichen ist. Danach wird das nächste Sample oberhalb der Schwelle als nächstes Ereignis erfasst. Die Zeitdifferenzen zwischen den aufeinanderfolgenden Ereignissen werden als „Zeit 1“, „Zeit 2“ usw. angezeigt.
 

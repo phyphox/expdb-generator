@@ -29,7 +29,7 @@ version: '0.1.0'
 #Todo: Sketch of setup, photo of setup, Physics background
 ---
 # Inelastic Collision
- 
+
 {{< youtube ikvtPDwV1FE >}}
 
 ## Overview

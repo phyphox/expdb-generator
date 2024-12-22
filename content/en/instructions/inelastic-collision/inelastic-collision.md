@@ -1,4 +1,4 @@
----
+--- 
 translationKey: "Inelastic Collision Instruction"
 mainfont: DejaVuSerif.ttf
 

@@ -1,4 +1,4 @@
----
+--- 
 translationKey: "Inelastic Collision Instruction"
 title: "(In)elastischer Stoß"
 date: 2024-12-17T11:42:40+01:00

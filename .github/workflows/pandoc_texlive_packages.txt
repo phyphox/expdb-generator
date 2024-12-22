@@ -14,7 +14,6 @@ soul
 geometry
 setspace
 babel
-babel-greek
 xeCJK
 lualatexja
 lualatex-math

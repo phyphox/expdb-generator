@@ -62,14 +62,14 @@ jobs:
         run: |
           echo $list_changed_files
           bash ./pandoc.sh $list_changed_files
-#      - name: Commit files # transfer the new files into the repository
-#        run: |
-#          git config --local user.name "GH_Action_Bot"
-#          git add ./content
-#          git commit -m "GH Action: Pandoc | New output for changed files"
-#          git push -f origin main
-      - name: Save artifacts # Instead of 'Commit files'. Saves the files as .zip
-        uses: actions/upload-artifact@v4
-        with:
-          name: pandoc-artifact
-          path: content/
+      - name: Commit files # transfer the new files into the repository
+        run: |
+          git config --local user.name "GH_Action_Bot"
+          git add ./content
+          git commit -m "GH Action: Pandoc | New output for changed files"
+          git push -f origin main
+#      - name: Save artifacts # Instead of 'Commit files'. Saves the files as .zip
+#        uses: actions/upload-artifact@v4
+#        with:
+#          name: pandoc-artifact
+#          path: content/

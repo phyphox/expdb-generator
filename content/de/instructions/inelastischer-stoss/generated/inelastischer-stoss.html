@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>inelastischer-stoss</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<h1 id="inelastischer-stoß">Inelastischer Stoß</h1>
+<p>{{&lt; youtube sqCEo4tj3e4 &gt;}}</p>
+<h2 id="überblick">Überblick</h2>
+<p>In diesem Experiment lässt du einen Ball in der Nähe des Mikrofons
+deines Smartphones auf eine harte Oberfläche (z.B. einen Tisch) fallen.
+Phyphox erfasst die Geräusche bei jedem Aufprall des Balls auf der
+Oberfläche und verwendet deren Zeitpunkte, um die Fallhöhe des Balls zu
+bestimmen. Es zeigt die Maxima der Flugparabel zwischen den Aufprallen
+sowie die nach jedem Aufprall verbleibende kinetische Energie (relativ
+zur anfänglichen Energie).</p>
+<h3 id="abgedeckte-themen">Abgedeckte Themen</h3>
+<p>Dieses Experiment kann verwendet werden, um den Energieerhaltungssatz
+und insbesondere die potenzielle und kinetische Energie zu besprechen.
+Es eignet sich auch zur Diskussion und Untersuchung von elastischen,
+plastischen und inelastischen Stößen. Da eine parabolische Flugbahn
+angenommen wird, kann es außerdem im Kontext eines einfachen
+parabelförmigen freien Falls verwendet werden, indem man die geschätzten
+Maximalhöhen zwischen den Aufprallen betrachtet. Um die von phyphox
+präsentierten Daten vollständig zu verstehen, sind jedoch ein
+Verständnis der Energie notwendig.</p>
+<h3 id="benötigte-materialien">Benötigte Materialien</h3>
+<ul>
+<li>Smartphone oder Tablet mit phyphox</li>
+<li>Ball (kleiner Metallball, Golfball, …)</li>
+<li>Harte Oberfläche (z.B. Tisch)</li>
+<li>Maßband oder Ähnliches wenn die phyphox-Ergebnisse geprüft werden
+sollen</li>
+</ul>
+<h3 id="zeitaufwand">Zeitaufwand</h3>
+<p>Der Aufbau des Experiments dauert weniger als eine Minute. Abhängig
+vom Geräuschpegel in der Umgebung kann es jedoch einige Versuche
+erfordern, die Schwelle des Triggers (siehe „Probleme und Lösungen“)
+richtig einzustellen.</p>
+<h2 id="aufbau">Aufbau</h2>
+<p>Platziere dein Smartphone auf der Oberfläche oder auf einem Stativ in
+der Nähe der Oberfläche. Da das Geräusch des Ballaufpralls auf der
+Oberfläche erfasst werden soll, wird dringend empfohlen, so nah wie
+möglich am Aufprallpunkt zu sein, damit das Geräusch sich von
+Hintergrundgeräuschen im Raum abhebt.</p>
+<p>Wähle in phyphox die Konfiguration „(In)elastic collision“ aus dem
+Hauptmenü. Starte die Messung, indem du auf das Dreieck in der oberen
+rechten Ecke drückst.</p>
+<p>Je nach Geräuschpegel in deinem Raum, der Wahl des Balls und der
+Oberfläche sowie dem Smartphone-Modell musst du möglicherweise die
+„Schwelle“-Einstellung im Reiter „Einstellungen“ anpassen. Diese
+bestimmt, bei welcher Lautstärke (auf einer Skala von 0 bis 1) ein
+Geräusch als Ereignis gewertet wird. Wenn Messwerte ohne hüpfenden Ball
+erscheinen, erhöhe die Schwelle von seinem Standard-Wert von 0,1. Wenn
+keine Messwerte erkannt werden, senke die Schwelle.</p>
+<p>Der Parameter „Mindestvertzögerung“ verhindert Mehrfachzählungen
+einzelner Aufpralle, z.B. aufgrund von Nachhall. Der Standardwert von
+0,1s ist in den meisten Fällen ausreichend.</p>
+<h2 id="durchführung">Durchführung</h2>
+<p>Stelle sicher, dass die Messung in phyphox läuft (Pause-Symbol wird
+in der oberen rechten Ecke angezeigt statt des dreieckigen
+Startsymbols). Setze die Messwerte über die „Reset“-Taste im Reiter
+„Höhen“ oder „Energie“ zurück. Lass den Ball neben dem Mikrofon des
+Smartphones fallen. Optional kannst du ein Maßband daneben halten um
+eine Referenzhöhe zu bestimmen.</p>
+<p>Im Reiter „Höhen“ erscheinen bis zu fünf Zeitintervalle, die zu sechs
+Aufprallen gehören.</p>
+<h2 id="datenanalyse">Datenanalyse</h2>
+<p>Die Zeiten im Reiter „Höhen“ entsprechen den Zeitdifferenzen zwischen
+zwei Aufprallen auf der Oberfläche. Die Höhen 1 bis 5 entsprechen der
+maximalen Höhe, die der Ball im jeweiligen Zeitintervall erreicht hat.
+Höhe 0 ist die anfängliche Höhe <strong>vor</strong> dem ersten
+Aufprall, extrapoliert aus den Aufprallen 1 bis 3 (siehe Abschnitt
+„Physikalischer Hintergrund und Analysedetails“).</p>
+<p>Der Reiter „Energie“ zeigt die zu den berechneten Höhen gehörenden
+Energiedaten an. Da die absolute Energie nicht bestimmt werden kann,
+wird die Energie der Höhe 1 auf 100% gesetzt. Das bedeutet, dass alle
+Energien als Bruchteil der potenziellen Energie der Höhe 1 aus dem
+Reiter „Höhen“ dargestellt werden. Folglich entsprechen die Energien 2
+bis 5 der potenziellen Energie der Höhen 2 bis 5 und damit dem
+Verhältnis der Höhen 2 bis 5 zu Höhe 1. Die kleinere Angabe „Bei Stoß
+behalten“ ist das Verhältnis der potenziellen Energie des aktuellen
+Zeitintervalls zur potentiellen Energie des vorherigen Intervalls und
+stellt somit den Anteil der kinetischen Energie dar, der nach dem
+letzten Aufprall erhalten geblieben ist.</p>
+<hr />
+<h2 id="physikalischer-hintergrund-und-analysedetails">Physikalischer
+Hintergrund und Analysedetails</h2>
+<p>Phyphox zeichnet Audiodaten des Smartphone-Mikrofons auf und
+analysiert sie sequentiell (wie in der Konfiguration „akustische
+Stoppuhr“). Die Samples werden auf einen Bereich von -1 bis 1
+normalisiert, wobei die genaue Bedeutung dieser Amplitude je nach
+Aufnahmehardware des Smartphones variieren kann. Wenn ein Sample die vom
+Benutzer eingestellte Trigger-Schwelle überschreitet, wird dies als
+Ereignis gezählt und die Zeit vermerkt. Die Zeit basiert auf der
+Abtastrate, die typischerweise 48 kHz (oder in einigen Fällen 44,1 kHz)
+beträgt. Das ergibt eine theoretische zeitliche Auflösung von
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>21</mn><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">μ</mi><mi mathvariant="normal">s</mi></mrow></mrow><annotation encoding="application/x-tex">21\,\mathrm{\mu s}</annotation></semantics></math>
+(bzw.
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>23</mn><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">μ</mi><mi mathvariant="normal">s</mi></mrow></mrow><annotation encoding="application/x-tex">23\,\mathrm{\mu s}</annotation></semantics></math>).
+In der Praxis ist diese Auflösung jedoch durch Unterschiede in den
+Geräuschen verschiedener Aufpralle, Dispersion und die Form der
+Schallwelle begrenzt. Während phyphox intern exakte Werte nutzt, werden
+daher nur drei Dezimalstellen (1 ms) angezeigt.</p>
+<p>Nach einem Ereignis werden die folgenden Audiosamples verworfen, bis
+die im unter „Mindestverzögerung“ eingestellte Zeit verstrichen ist.
+Danach wird das nächste Sample oberhalb der Schwelle als nächstes
+Ereignis erfasst. Die Zeitdifferenzen zwischen den aufeinanderfolgenden
+Ereignissen werden als „Zeit 1“, „Zeit 2“ usw. angezeigt.</p>
+<p>Phyphox nimmt eine perfekte parabolische Flugbahn zwischen den
+Ereignissen an. Die Höhen „Höhe 1“ bis „Höhe 5“ werden nach folgender
+Formel berechnet:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mi>g</mi><mi>Δ</mi><msubsup><mi>t</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">
+h_i = \frac{1}{8} g \Delta t_i^2
+</annotation></semantics></math></p>
+<p>mit
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><msub><mi>t</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\Delta t_i</annotation></semantics></math>
+als zugehörigem „Zeit i“ und
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>g</mi><annotation encoding="application/x-tex">g</annotation></semantics></math>
+als Erdbeschleunigung
+(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>9</mn><mo>,</mo><mn>81</mn><mspace width="0.167em"></mspace><mi>m</mi><mi>/</mi><msup><mi>s</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">9,81 \, m/s^2</annotation></semantics></math>).
+Dies basiert auf der Formel für die Strecke eines Körpers unter
+konstanter Beschleunigung
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>a</mi><annotation encoding="application/x-tex">a</annotation></semantics></math>
+aus dem Ruhezustand:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>d</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>a</mi><msup><mi>t</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">
+d = \frac{1}{2}a t^2
+</annotation></semantics></math></p>
+<p>In diesem Experiment gilt
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>a</mi><mo>=</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">a = g</annotation></semantics></math>
+und
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Δ</mi><msub><mi>t</mi><mi>i</mi></msub><mo>=</mo><mn>2</mn><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta t_i = 2t</annotation></semantics></math>,
+da das Zeitintervall sowohl den Aufstieg zur maximalen Höhe als auch den
+symmetrischen Abstieg umfasst.</p>
+<p>Die Energien werden als potenzielle Energie an den höchsten Punkten
+der Flugbahn berechnet. Mit konstanter Masse und Erdbeschleunigung kann
+die potenzielle Energie
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>i</mi></msub><mo>=</mo><mi>m</mi><mi>g</mi><msub><mi>h</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">E_i = m g h_i</annotation></semantics></math>
+an jedem Maximum einfach als Bruchteil von
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>E</mi><mn>1</mn></msub><annotation encoding="application/x-tex">E_1</annotation></semantics></math>
+ausgedrückt werden, nämlich als das Verhältnis der Höhen
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>i</mi></msub><mi>/</mi><msub><mi>E</mi><mn>1</mn></msub><mo>=</mo><msub><mi>h</mi><mi>i</mi></msub><mi>/</mi><msub><mi>h</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">E_i / E_1 = h_i / h_1</annotation></semantics></math>.</p>
+<p>Die anfängliche Höhe
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>h</mi><mn>0</mn></msub><annotation encoding="application/x-tex">h_0</annotation></semantics></math>
+wird extrapoliert, indem angenommen wird, dass das Verhältnis der
+potenziellen Energie vor und nach dem ersten Aufprall dem vor und nach
+dem zweiten Aufprall entspricht:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right" style="text-align: right"><mfrac><msub><mi>E</mi><mn>0</mn></msub><msub><mi>E</mi><mn>1</mn></msub></mfrac></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><mfrac><msub><mi>h</mi><mn>0</mn></msub><msub><mi>h</mi><mn>1</mn></msub></mfrac><mo>=</mo><mfrac><msub><mi>h</mi><mn>1</mn></msub><msub><mi>h</mi><mn>2</mn></msub></mfrac><mo>=</mo><mfrac><msubsup><mi>t</mi><mn>1</mn><mn>2</mn></msubsup><msubsup><mi>t</mi><mn>2</mn><mn>2</mn></msubsup></mfrac></mtd></mtr><mtr><mtd columnalign="right" style="text-align: right"><mo>⇒</mo><msub><mi>h</mi><mn>0</mn></msub></mtd><mtd columnalign="left" style="text-align: left"><mo>=</mo><msub><mi>h</mi><mn>1</mn></msub><mfrac><msubsup><mi>t</mi><mn>1</mn><mn>2</mn></msubsup><msubsup><mi>t</mi><mn>2</mn><mn>2</mn></msubsup></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mi>g</mi><mfrac><msubsup><mi>t</mi><mn>1</mn><mn>4</mn></msubsup><msubsup><mi>t</mi><mn>2</mn><mn>2</mn></msubsup></mfrac></mtd></mtr></mtable><annotation encoding="application/x-tex">\begin{align*}
+\frac{E_0}{E_1} &amp;= \frac{h_0}{h_1} = \frac{h_1}{h_2} = \frac{t_1^2}{t_2^2} \\
+\Rightarrow h_0 &amp;= h_1 \frac{t_1^2}{t_2^2} = \frac{1}{8}g\frac{t_1^4}{t_2^2}
+\end{align*}</annotation></semantics></math></p>
+<p>In der Praxis wird die anfängliche Höhe häufig unterschätzt, da bei
+höheren Aufprallgeschwindigkeiten mehr Energie in Wärme umgewandelt
+wird. Der erste Aufprall hat typischerweise die höchste Geschwindigkeit
+und verliert damit einen höheren Anteil seiner Energie. Die Annahme
+eines gleichen Verlustfaktors führt somit zu einer Unterschätzung der
+potentiellen Energie vor dem ersten Aufprall und damit zu einer
+Unterschätzung der Anfangshöhe.</p>
+<h2 id="probleme-und-lösungen">Probleme und Lösungen</h2>
+<ul>
+<li><strong>Phyphox erfasst nicht alle Aufpralle.</strong><br />
+Wenn die Messung auf einige Aufpralle oder laute Geräusche wie Klatschen
+reagiert, aber manche Aufpralle verpasst, ist die Triggerschwelle zu
+hoch eingestellt. Verringere die Schwelle, um sie an die Lautstärke der
+Aufprallgeräusche anzupassen, oder erhöhe die Lautstärke dieser
+Geräusche, indem du eine andere Ball-/Oberflächenkombination wählst. Du
+kannst dir auch die Lautstärke der Geräusche in der
+phyphox-Konfiguration „Audio Scope“ ansehen, welche Geräusche im
+gleichen Bereich von null bis eins wie die Triggerschwelle anzeigt.</li>
+<li><strong>Ereignisse werden registriert, obwohl der Ball nicht
+springt.</strong><br />
+In diesem Fall ist die Triggerschwelle zu niedrig eingestellt und/oder
+die Hintergrundgeräusche sind zu laut. Erhöhe die Schwelle so lange, bis
+die Messung nicht mehr durch Hintergrundgeräusche ausgelöst wird. Stelle
+sicher, dass das Aufprallgeräusch lauter ist als die
+Hintergrundgeräusche im Raum.</li>
+<li><strong>Einzelne Aufpralle werden mehrfach gezählt.</strong><br />
+Dies kann eine Folge einer zu niedrig eingestellten Triggerschwelle
+sein, da der Nachhall des Geräuschs noch über der Schwelle liegt.
+Versuche zunächst, die Schwelle zu erhöhen. Wenn dies keine Option ist,
+weil leisere spätere Aufpralle nicht erfasst werden oder die
+Umgebungsgeräusche zu laut sind, kannst du versuchen, die Einstellung
+„Mindestverzögerung“ zu erhöhen, um schnelle Ereignisse zu verhindern.
+Beachte jedoch, dass dies dazu führen kann, dass spätere, schneller
+aufeinanderfolgende Aufpralle nicht erfasst werden.</li>
+<li><strong>Die Energieanzeigen sind unplausibel (z.B. größer als 100
+%).</strong><br />
+Überprüfe die Zeitintervalle im Reiter „Höhen“. Diese sind
+wahrscheinlich nicht korrekt, und es könnte ein sehr kurzes Intervall
+vorhanden sein, das durch einen doppelt gezählten Aufprall entstanden
+ist. Sieh dir die Lösungen für verpasste Aufpralle oder mehrfach
+gezählte Aufpralle an um korrekte Zeiten zu erhalten.</li>
+</ul>
+<h2 id="variationen">Variationen</h2>
+<p>Dieses Experiment funktioniert auf verschiedenen Skalen, von Murmeln
+bis zu Basketbällen und von Zentimetern bis zu mehreren Metern. Beachte
+jedoch, dass Luftwiderstand eine Rolle spielen könnte und stark
+unterschiedliche Geräuschpegel eine Herausforderung sein können.</p>
+<p>Das Experiment kann als Demonstration vor oder nach der Besprechung
+der zugrundeliegenden Berechnungen dienen. Es kann auch verwendet
+werden, um Stöße mit unterschiedlicher Elastizität zu untersuchen, z.B.
+durch Variieren der Ball-Oberflächen-Kombinationen.</p>
+<p>Für eine systematische Untersuchung des Rückstoßkoeffizienten kann
+ein gut springender Ball (z.B. Golfball oder Stahlkugel) verwendet
+werden. Hier lässt sich die Elastizität des Stoßes schrittweise durch
+das Einfügen von Papierbögen zwischen Ball und Oberfläche
+reduzieren.</p>
+<h2 id="weitere-videos">Weitere Videos</h2>
+<p>{{&lt; youtube 8Dd8Vi9GuzE &gt;}} {{&lt; youtube _2K9aYdkt6Y
+&gt;}}</p>
+<h2 id="arbeitsblätter-material">Arbeitsblätter / Material</h2>
+<p>Es sind derzeit keine Arbeitsblätter verfügbar. Eventuell findest du
+in anderen Sprachen dieser Seite Arbeitsblätter, die übersetzt werden
+können.</p>
+<p>Wir freuen uns immer, wenn du Arbeitsblätter mit uns und anderen
+Nutzern teilst. Kontaktiere uns einfach unter contact@phyphox.org.</p>
+</body>
+</html>

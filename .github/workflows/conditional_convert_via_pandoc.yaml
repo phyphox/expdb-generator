@@ -47,6 +47,7 @@ jobs:
     if: needs.condition_check_files.outputs.bool_files_changed == 'true'
     env:
       list_changed_files: ${{ needs.condition_check_files.outputs.list_changed_files }}
+      COMMIT: ""
     steps:
       - uses: actions/checkout@v4  # In order to find the script pandoc.sh
         with:
@@ -67,7 +68,7 @@ jobs:
           git config --local user.name "GH_Action_Bot"
           git add ./content
           git commit -m "GH Action: Pandoc | New output for changed files"
-          COMMIT=$(git rev-parse HEAD)
+          export COMMIT=$(git rev-parse HEAD)
           git push -f origin ${GITHUB_REF##*/}
           curl https://phyphox.org/expdb/pandocdone.php?commit=$COMMIT &> /dev/null
 #      - name: Save artifacts # Instead of 'Commit files'. Saves the files as .zip
@@ -75,3 +76,8 @@ jobs:
 #        with:
 #          name: pandoc-artifact
 #          path: content/
+      - name: Add URL as comment
+        uses: peter-evans/commit-comment@v3
+        with:
+          body: Hugo output should be available at https://phyphox.org/expdb/$COMMIT/public
+

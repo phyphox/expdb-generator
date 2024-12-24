@@ -71,13 +71,15 @@ jobs:
           export COMMIT=$(git rev-parse HEAD)
           git push -f origin ${GITHUB_REF##*/}
           curl https://phyphox.org/expdb/pandocdone.php?commit=$COMMIT &> /dev/null
+          jq -nc "{\"body\": \"Hugo output should be available at https://phyphox.org/expdb/$COMMIT/public\"}" | \
+          curl -sL  -X POST -d @- \
+            -H "Content-Type: application/json" \
+            -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/$GITHUB_REPOSITORY/commits/$COMMIT/comments"
 #      - name: Save artifacts # Instead of 'Commit files'. Saves the files as .zip
 #        uses: actions/upload-artifact@v4
 #        with:
 #          name: pandoc-artifact
 #          path: content/
-      - name: Add URL as comment
-        uses: peter-evans/commit-comment@v3
-        with:
-          body: Hugo output should be available at https://phyphox.org/expdb/${{ COMMIT }}/public
+
 

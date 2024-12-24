@@ -79,5 +79,5 @@ jobs:
       - name: Add URL as comment
         uses: peter-evans/commit-comment@v3
         with:
-          body: Hugo output should be available at https://phyphox.org/expdb/$COMMIT/public
+          body: Hugo output should be available at https://phyphox.org/expdb/${{ COMMIT }}/public
 

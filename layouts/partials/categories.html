@@ -13,7 +13,7 @@
         {{ $categories = $categories | append .Params.categories }}
         {{ end }}
         {{ range $category := $categories | uniq | sort }}
-        <li><a href="{{ "/categories/" | relLangURL }}{{ $category | urlize }}">{{ i18n $category }}</a></li>
+        <li><a href="{{ "categories/" | relLangURL }}{{ $category | urlize }}">{{ i18n $category }}</a></li>
         {{ end }}
     </ul>
 </div>

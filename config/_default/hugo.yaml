@@ -48,9 +48,6 @@ taxonomies:
   sensor: sensors
   material: materials
 
-disableKinds:
-- home
-
 ignorefiles: "generated/.*"
 
 enableEmoji: true

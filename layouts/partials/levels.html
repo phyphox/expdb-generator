@@ -6,7 +6,7 @@
         {{ $levels = $levels | append .Params.levels }}
         {{ end }}
         {{ range $level := $levels | uniq | sort }}
-        <li><a href="{{ "/levels/" | relLangURL }}{{ $level | urlize }}">{{ $level }}</a></li>
+        <li><a href="{{ "levels/" | relLangURL }}{{ $level | urlize }}">{{ $level }}</a></li>
         {{ end }}
     </ul>
 </div>

@@ -6,7 +6,7 @@
         {{ $sensors = $sensors | append .Params.sensors }}
         {{ end }}
         {{ range $sensor := $sensors | uniq | sort }}
-        <li><a href="{{ "/sensors/" | relLangURL }}{{ $sensor | urlize }}">{{ $sensor }}</a></li>
+        <li><a href="{{ "sensors/" | relLangURL }}{{ $sensor | urlize }}">{{ $sensor }}</a></li>
         {{ end }}
     </ul>
 </div>

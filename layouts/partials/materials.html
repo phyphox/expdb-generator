@@ -6,7 +6,7 @@
         {{ $materials = $materials | append .Params.materials }}
         {{ end }}
         {{ range $material := $materials | uniq | sort }}
-        <li><a href="{{ "/materials/" | relLangURL }}{{ $material | urlize }}">{{ i18n $material }}</a></li>
+        <li><a href="{{ "materials/" | relLangURL }}{{ $material | urlize }}">{{ i18n $material }}</a></li>
         {{ end }}
     </ul>
 </div>

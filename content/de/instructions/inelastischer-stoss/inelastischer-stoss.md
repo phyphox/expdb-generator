@@ -7,13 +7,13 @@ author:
   - Sebastian Staacks
 CreativeCommons: ['BY']
 categories:
-  - 'Mechanik'
+  - 'Mechanics'
 sensors:
-  - 'Mikrofon'
+  - 'Microphone'
 levels: ['2a', '2b', '3', '6']  # see doc for explanation. Remove everything else
 video: ['Localized']
-requiredMaterials:
-  - 'Haushaltsgegenstände'
+materials:
+  - 'Household items'
 tags: # All Tags start upper-case expect for 'phyphox'. This list can be expanded!
   - 'Ball'
   - 'Inelastischer Stoß'
@@ -24,9 +24,7 @@ tags: # All Tags start upper-case expect for 'phyphox'. This list can be expande
 summary: 'Bestimme die Anfangshöhe und die Energiebilanz eines springenden Balls anhand der Zeiten seiner Stoßgeräusche.'
 version: '0.1.0'
 
-#Todo: Sketch of setup, photo of setup, Physics background
 ---
-# Inelastischer Stoß
 
 {{< youtube sqCEo4tj3e4 >}}
 

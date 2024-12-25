@@ -29,7 +29,7 @@ sensors:  # used by phyphox. Remove those which are not used
   - 'Speaker'
 levels: ['0', '1', '2a', '2b', '3', '6', '7']  # see doc for explanation. Remove everything else
 video: ['no', 'English', 'Localized', 'Silent'] # choose accordingly
-requiredMaterials:
+materials:
   - 'Smartphone only'
   - 'Household items'
   - 'Basic experiment material'

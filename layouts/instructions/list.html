@@ -2,6 +2,9 @@
 <h2>{{- i18n "overview" -}}&nbsp;{{- i18n "instructions" -}}</h2>
 
 {{- partial "categories.html" . -}}
+{{- partial "levels.html" . -}}
+{{- partial "sensors.html" . -}}
+{{- partial "materials.html" . -}}
 
 {{ $pages := where site.RegularPages "Type" "instructions" }}
 {{ $paginator := .Paginate $pages }}

@@ -1,0 +1,12 @@
+<div class="requiredMaterials">
+    <h3>{{- i18n "requiredMaterials" -}}</h3>
+    <ul>
+        {{ $materials := slice }}
+        {{ range .Site.RegularPages }}
+        {{ $materials = $materials | append .Params.materials }}
+        {{ end }}
+        {{ range $material := $materials | uniq | sort }}
+        <li><a href="{{ "/materials/" | relLangURL }}{{ $material | urlize }}">{{ i18n $material }}</a></li>
+        {{ end }}
+    </ul>
+</div>

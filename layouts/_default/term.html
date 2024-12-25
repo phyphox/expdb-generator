@@ -1,0 +1,20 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+<div class="instructions">
+    <div aria-labelledby="message" role="region">
+        <ol class="instructions">
+            {{ range .Pages }}
+            <li>
+                <h4><a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a></h4>
+                {{- .Date | time.Format ":date_medium" -}}&nbsp;-&nbsp;{{- i18n "version" -}}:&nbsp;{{- .Param "version" -}}<hr/>
+                <div class="summary"> {{- .Summary -}} </div>
+            </li>
+            {{- end -}}
+        </ol>
+    </div>
+</div>
+
+{{ end }}
+

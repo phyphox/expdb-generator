@@ -1,0 +1,12 @@
+<div class="sensors">
+    <h3>{{- i18n "sensors" -}}</h3>
+    <ul>
+        {{ $sensors := slice }}
+        {{ range .Site.RegularPages }}
+        {{ $sensors = $sensors | append .Params.sensors }}
+        {{ end }}
+        {{ range $sensor := $sensors | uniq | sort }}
+        <li><a href="{{ "/sensors/" | relLangURL }}{{ $sensor | urlize }}">{{ $sensor }}</a></li>
+        {{ end }}
+    </ul>
+</div>

@@ -13,13 +13,6 @@ defaultContentLanguage: en
 languages:
   en:
     contentDir: content/en
-    permalinks:
-      page:
-        instructions: /instructions/:slug/
-
-    taxonomies:
-      category: "categories"
-      tag: "tags"
 
     disabled: false
     languageCode: en-US
@@ -32,17 +25,6 @@ languages:
     weight: 1
   de:
     contentDir: content/de
-
-    permalinks:
-      categories: "/:section/:slug"
-      page:
-        instructions: /anleitungen/:slug/
-      section:
-        instructions: /anleitungen/
-
-    taxonomies:
-      category: "Kategorien"
-      tag: "Stichwörter"
 
     disabled: false
     languageCode: de-DE
@@ -62,6 +44,14 @@ languages:
 taxonomies:
   category: categories
   tag: tags
+  level: levels
+  sensor: sensors
+  material: materials
+
+disableKinds:
+- home
+
+ignorefiles: "generated/.*"
 
 enableEmoji: true
 markup:

@@ -1,0 +1,12 @@
+<div class="levels">
+    <h3>{{- i18n "levels" -}}</h3>
+    <ul>
+        {{ $levels := slice }}
+        {{ range .Site.RegularPages }}
+        {{ $levels = $levels | append .Params.levels }}
+        {{ end }}
+        {{ range $level := $levels | uniq | sort }}
+        <li><a href="{{ "/levels/" | relLangURL }}{{ $level | urlize }}">{{ $level }}</a></li>
+        {{ end }}
+    </ul>
+</div>

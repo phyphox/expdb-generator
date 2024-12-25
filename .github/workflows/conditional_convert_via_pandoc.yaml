@@ -66,6 +66,7 @@ jobs:
       - name: Commit files # transfer the new files into the repository
         run: |
           git config --local user.name "GH_Action_Bot"
+          git config --local user.email "no-reply@phyphox.org"
           git add ./content
           git commit -m "GH Action: Pandoc | New output for changed files"
           export COMMIT=$(git rev-parse HEAD)

@@ -1,5 +1,6 @@
 <nav class="CategoryNav">
   <ul>
+    <li><a href="https://phyphox.org">{{- "phyphox.org" -}}</a></li>
     <li><a href="{{ relref . "instructions" }}">{{- i18n "instructions" -}}</a></li>
   </ul>
 </nav>
@@ -9,7 +10,7 @@
     <ul>
       {{- range .Translations -}}
         <li>
-          <a href="{{ .RelPermalink }}">{{- .Language -}}:&nbsp; {{- .LinkTitle -}}</a>
+          <a href="{{ .RelPermalink }}">{{- .Language -}} <span class="translationTitle">{{- .LinkTitle -}}</span></a>
         </li>
       {{- end -}}
     </ul>

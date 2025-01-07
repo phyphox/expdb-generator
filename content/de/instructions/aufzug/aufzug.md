@@ -64,7 +64,7 @@ Je nach Beadrf und Aufgabenstellung.
 
 ## Physikalischer Hintergrund und Analysedetails
 
-Die Konfiguration „Aufzug“ nutzt die „internationale Höhenformel“ um den Luftdruck $p$ in eine Höhe $h$ umzurechnen.
+Die Konfiguration „Aufzug“ nutzt die „internationale Höhenformel“ um den Luftdruck \(p\) in eine Höhe \(h\) umzurechnen.
 
 $$
 h = \frac{288,15\,\mathrm{K}}{0,0065\,\mathrm{\frac{K}{m}}}\left(1-\left(\frac{p(h)}{1013,25\,\mathrm{hPa}}\right)^{\frac{1}{5,255}}\right)

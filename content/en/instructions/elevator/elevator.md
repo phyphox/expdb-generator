@@ -9,8 +9,7 @@ CreativeCommons: ['BY']
 categories:
   - 'Mechanics'
 sensors:
-  - 'Microphone'
-  - 'Accelerometer'
+  - 'Pressure'
 levels: ['2a', '2b', '3', '6']  # see doc for explanation. Remove everything else
 video: ['English']
 materials:
@@ -69,7 +68,7 @@ Depending on the requirements and task.
 
 ## Physics background and analysis details
 
-The "Elevator" configuration uses the "international barometric formula" to convert air pressure $p$ into height $h$.
+The "Elevator" configuration uses the "international barometric formula" to convert air pressure \(p\) into height \(h\).
 
 $$
 h = \frac{288.15\,\mathrm{K}}{0.0065\,\mathrm{\frac{K}{m}}}\left(1-\left(\frac{p(h)}{1013.25\,\mathrm{hPa}}\right)^{\frac{1}{5.255}}\right)

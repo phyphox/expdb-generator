@@ -99,7 +99,7 @@ This experiment allows for many variations, such as using it while climbing stai
 
 ## Worksheets / material
 
-* Worksheet by Solmaz Khodaeifaal (Simon Fraser University): [docx](files/elevator_khodaeifaal.docx), [pdf](files/elevator_khodaeifaal.pdf)
+* Worksheet by Solmaz Khodaeifaal (Simon Fraser University): [docx](../files/elevator_khodaeifaal.docx), [pdf](../files/elevator_khodaeifaal.pdf)
 
 We are always happy to receive and share your worksheets. Get in touch with us at contact@phyphox.org
 

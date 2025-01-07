@@ -11,7 +11,7 @@
   console.log(currentFileName)
 
   // data types NO CATCH FOR NONEXISTENT FILES; provide everything listed here with pandoc
-  const fileTypes = ["pdf", "tex", "html", "odt", "docx"];
+  const fileTypes = ["pdf", "tex", "odt", "docx"];
 
   // dropdown-menu dynamically filled with the aforementioned list
   const fileTypeSelect = document.getElementById('fileType');
@@ -32,7 +32,7 @@
 
   function downloadFile() {
     const fileType = document.getElementById('fileType').value;
-    window.location.href = "generated/"+fileType;
-    window.location.download = "generated/"+fileType;
+    window.location.href = "../generated/"+fileType;
+    window.location.download = "../generated/"+fileType;
   }
 </script>

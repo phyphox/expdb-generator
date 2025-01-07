@@ -1,4 +1,4 @@
---- 
+---
 translationKey: "Elevator Instruction"
 title: "Aufzug"
 date: 2025-01-07T14:21:17+01:00

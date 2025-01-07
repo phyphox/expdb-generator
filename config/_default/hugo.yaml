@@ -48,7 +48,7 @@ taxonomies:
   sensor: sensors
   material: materials
 
-ignorefiles: "generated/.*"
+ignorefiles: "generated/.*\.md"
 
 enableEmoji: true
 markup:

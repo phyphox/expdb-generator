@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>aufzug</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+<p>{{&lt; youtube Jgzym7tplVU &gt;}}</p>
+<h2 id="überblick">Überblick</h2>
+<p>Der Luftdrucksensor kann genutzt werden um Höhendifferenzen zu
+erfassen. Dies kann insbesondere in Aufzügen sehr anschaulich genutzt
+werden, deren zurückgelegte Höhendifferenz sowie Geschwindigkeit
+ermittelt werden kann. So ist sowohl eine Diskussion der barometrischen
+Höhenformel als auch der Kinematik möglich. Die hier dargestellten
+Experimentideen lassen sich auch auf andere Situationen übertragen, in
+denen ein signifikanter Höhenunterschied erreicht wird (z.B.
+Treppensteigen, Fahrt auf einem Riesenrad, Seilzug über mehrere Etagen
+usw.)</p>
+<h3 id="abgedeckte-themen">Abgedeckte Themen</h3>
+<p>In diesem Experiment wird der Luftdrucksensor genutzt um
+Höhenunterschiede eines sich bewegenden Objekts zu ermitteln, so dass es
+auf drei Arten eingesetzt werden kann: - Es kann der Zusammenhang
+zwischen Luftdruck und Höhe, also die barometrische Höhenformel
+behandelt werden. In dem Fall bietet es sich an, nicht die in phyphox
+integrierte Konfiguration „Aufzug“ zu verwenden, sondern direkt über
+„Luftdruck“ die Rohdaten des Sensors aufzuzeichnen und den Lernenden die
+Umrechnung zu überlassen, bzw. die Werte mit einer Referenz (z.B.
+Messung mit Lot, Abzählen von Stockwerken, GPS-Messung (teuils sehr
+ungenau), bekannte Gebäudehöhe, usw.) zu vergleichen. - Es kann die
+Kinematik, insbesondere s-t-, v-t- und a-t-Diagramme anhand eines
+alltäglichen Vorgangs veranschaulicht werden. Hierzu wird die in phyphox
+integrierte Konfiguration „Aufzug” genutzt, die die Umrechnung des
+Luftdrucks in eine Höhendifferenz übernimmt und in Verbindung mit dem
+Beschleunigungssensor als s-t-, v-t- und a-t-Diagramme visualisiert. Die
+Lernenden können mit dem Aufzug fahren und in Echtzeit sehen, wie die
+Graphen zur Bewegung des Fahrstuhls entstehen. - Das Experiment kann als
+Werkzeug zur Höhenbestimmung in anderen Experimenten genutzt werden.
+Hier muss mit einer gewissen Drift gerechnet werden, aber insbesondere
+mit wiederholter Messung sind Genauigkeiten von etwa einem Meter
+erreichbar, was in der Regel genauer ist als die in der Vertikalen recht
+ungenaue GPS-Position und den Vorteil bietet, auch in Gebäuden und
+Fahrzeugen zu funktionieren.</p>
+<h3 id="benötigte-materialien">Benötigte Materialien</h3>
+<ul>
+<li>Smartphone oder Tablet mit phyphox, welches über einen
+Luftdrucksensor verfügt. Dies ist bei allen Apple-Geräten der Fall und
+bei Android-Geräten typischerweise ab der „mittleren Preisklasse“ (vgl.
+<a href="Sensordatenbank">https://phyphox.org/sensordb</a>).</li>
+<li>Je nach Experiment etwas, was zu einer Höhendifferenz führt (Aufzug,
+Rolltreppe, größerer Flaschenzug)</li>
+</ul>
+<h3 id="zeitaufwand">Zeitaufwand</h3>
+<p>Die Messung kann alleine mit dem Smartphone jederzeit begonnen werden
+und dauert nur so lange wie der zu messende Vorgang. Sollen die
+Lerndenden die Berechnung der barometrischen Höhenformel selbst durch
+führen, ist hierfür Zeit einzuplanen.</p>
+<h2 id="aufbau">Aufbau</h2>
+<p>Bei Nutzung eines Aufzugs ist kein Aufbau notwendig. Bei Alternativen
+(Flaschenzug bzw. herablassen des Smartphones an einem Seil) sind
+entsprechende Vorbereitungen notwendig.</p>
+<p>In phyphox muss lediglich die Konfiguration „Aufzug“ oder für
+Rohdaten „Luftdruck“ geöffnet werden. Auch hier sind keine weiteren
+Einstellungen notwendig.</p>
+<h2 id="durchführung">Durchführung</h2>
+<p>Öffne je nach Ziel des Versuchs die in phyphox integrierte
+Konfiguration „Aufzug“ (zur automatischen Berechnung von s-t-, v-t- und
+a-t-Diagrammen) oder „Luftdruck“ (um Rohdaten des Sensors
+aufzuzeichnen). Begib dich in den Aufzug un platziere das Smartphone auf
+dem Boden. Starte die Messung mit dem Dreieck-Symbol oben rechts und
+wähle im Aufzug eine Etage. Stoppe die Messung am Ende der Fahrt mit der
+Pause-Taste (parallele Linien).</p>
+<h2 id="datenanalyse">Datenanalyse</h2>
+<p>Je nach Beadrf und Aufgabenstellung.</p>
+<hr />
+<h2 id="physikalischer-hintergrund-und-analysedetails">Physikalischer
+Hintergrund und Analysedetails</h2>
+<p>Die Konfiguration „Aufzug“ nutzt die „internationale Höhenformel“ um
+den Luftdruck
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>
+in eine Höhe
+<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>
+umzurechnen.</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mfrac><mrow><mn>288</mn><mo>,</mo><mn>15</mn><mspace width="0.167em"></mspace><mi mathvariant="normal">K</mi></mrow><mrow><mn>0</mn><mo>,</mo><mn>0065</mn><mspace width="0.167em"></mspace><mfrac><mi mathvariant="normal">K</mi><mi mathvariant="normal">m</mi></mfrac></mrow></mfrac><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mrow><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>h</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>1013</mn><mo>,</mo><mn>25</mn><mspace width="0.167em"></mspace><mrow><mi mathvariant="normal">h</mi><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mfrac><mn>1</mn><mrow><mn>5</mn><mo>,</mo><mn>255</mn></mrow></mfrac></msup><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
+h = \frac{288,15\,\mathrm{K}}{0,0065\,\mathrm{\frac{K}{m}}}\left(1-\left(\frac{p(h)}{1013,25\,\mathrm{hPa}}\right)^{\frac{1}{5,255}}\right)
+</annotation></semantics></math></p>
+<p>Da der Absolutwert unter anderem metereologischen Schwankungen
+unterliegt, wird der erste Messwert als Referenz genutzt und auf die
+Höhe Null gesetzt, so dass in Folge eine Höhendifferenz bestimmt wird.
+Zudem mittelt diese Konfiguration die Druckmessungen in Intervallen von
+1s um das Rauschen zu reduzieren, auch wenn der verbaute Luftdrucksensor
+höhere Raten unterstützt.</p>
+<p>Das a-t- Diagramm entspricht den Rohdaten der z-Achse (senkrecht zum
+Bildschirm) des Beschleunigungssensors.</p>
+<h2 id="probleme-und-lösungen">Probleme und Lösungen</h2>
+<ul>
+<li><strong>Das a-t-Diagramm ist zu verrauscht</strong> Das a-t-Diagramm
+entspricht der z-Achse des Beschleunigugnssensors, welche senkrecht zum
+Bildschirm liegt. Entsprechend muss das Smartphone flach liegen und darf
+nicht aufrecht gehalten werden. Zudem dominieren Vibrationen leicht die
+vergleichsweise geringe Beschleunigung eines Aufzugs. In diesen Fällen
+kann es helfen, das Smartphone nicht auf den Boden zu legen, sondern in
+der Hand zu halten, oder auf einen weichen, leicht dämpfenden Untergrund
+(Schaumstoff, Jacke,…) zu legen.</li>
+<li><strong>Der Luftdruck / Höhenverlauf ist unerwartet.</strong><br />
+Denke daran, dass die Messgröße Luftdruck auch anders beeinflusst werden
+kann. In Fahrzeugen werden Höhenunterschiede beispielsweise leicht durch
+Druckunterschiede in Tunneln oder den Staudruck über Lüftungen (vgl.
+Pitot-Rohr) überlagert. In sehr schnellen Aufzügen großer Gebäude sind
+teils Schächte zum Druckausgleich verbaut und das Lüftungssystem eines
+Gebäudes kann ebenso unerwartete Einflüsse haben. In größeren
+Passagierflugzeugen ist eine Höhenmessung unmöglich, dass der
+Kabinendruck künstlich reguliert wird.</li>
+<li><strong>Der Luftruck zeigt plötliche Schwankungen</strong> Sollte es
+sich um ein wasserdichtes Smartphone handeln, kann der Druckausgleich
+zur Umgebung nur langsam erfolgen. Drückt man auch nur leicht auf das
+Gehäuse (schon beim Halten des Smartphones) kann eine kurzzeitige
+Druckänderung im Gerät entstehen, die die Messung überlagert.</li>
+</ul>
+<h2 id="variationen">Variationen</h2>
+<p>Dieses Experiment erlaubt viele Variationen wie beispielsweise der
+Einsatz beim Treppensteigen, mit Seilzügen oder aber auch mit
+Smartphones, die an einer Drohne befestigt werden. Ebenso spannend sind
+Freizeitparkattraktionen wie Riesenräder oder Falltürme. Zu beachten
+ist, dass abhängig vom verwendeten Smartphone oder Tablet eine Auflösung
+von etwa einem Meter Höhenunterschied möglich ist und oft eine zeitliche
+Drift zu erkennen ist. Entsprechend sind Höhenunterschiede innerhalb
+eines Raumes meist nicht sinnvoll messbar, sondern man sollte Systeme
+suchen, die eine Beweugung über mehrere Etagen / mehrere Meter
+erzeugen.</p>
+<h2 id="arbeitsblätter-material">Arbeitsblätter / Material</h2>
+<p>Es sind derzeit keine Arbeitsblätter verfügbar. Eventuell findest du
+in anderen Sprachen dieser Seite Arbeitsblätter, die übersetzt werden
+können.</p>
+<p>Wir freuen uns immer, wenn du Arbeitsblätter mit uns und anderen
+Nutzern teilst. Kontaktiere uns einfach unter contact@phyphox.org.</p>
+</body>
+</html>

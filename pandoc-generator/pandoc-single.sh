@@ -8,7 +8,8 @@ FILENAME=$(basename -- "$1")
 LOGID="${FILENAME%.*}"
 SUPPORTDIR=$(dirname "$0")
 SRCDIR=$(dirname "$1")
-I18NSRCDIR=${SRCDIR#./en/}
+SRCDIR=${SRCDIR#./}
+I18NSRCDIR=${SRCDIR#en/}
 OUTFILE="../$I18NSRCDIR/generated/$LOGID"
 
 mkdir -p "../$I18NSRCDIR/generated"

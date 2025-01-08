@@ -8,15 +8,16 @@ FILENAME=$(basename -- "$1")
 LOGID="${FILENAME%.*}"
 SUPPORTDIR=$(dirname "$0")
 SRCDIR=$(dirname "$1")
-OUTFILE="$SRCDIR/generated/$LOGID"
+I18NSRCDIR=${SRCDIR#./en/}
+OUTFILE="../$I18NSRCDIR/generated/$LOGID"
 
-mkdir -p "$SRCDIR/generated"
+mkdir -p "../$I18NSRCDIR/generated"
 
 echo "PANDOC Processing $1 as $LOGID"
 
-pandoc --from markdown+tex_math_single_backslash --to native "$1" -o "$OUTFILE.ast"
+pandoc --from markdown+tex_math_single_backslash --to native "content/$1" -o "$OUTFILE.ast"
 for ext in ${Only_Standalone_Output_Types}; do
-    echo "$LOGID Genrating $ext"
+    echo "$LOGID Generating $ext"
     pandoc --from native "$OUTFILE.ast" --standalone --pdf-engine=lualatex -o "$OUTFILE.$ext"
 done
 

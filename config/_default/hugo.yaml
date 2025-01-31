@@ -53,6 +53,10 @@ ignorefiles: "generated/.*\\.html"
 enableEmoji: true
 markup:
   goldmark:
+    parser:
+      attribute:
+        block: true
+      wrapStandAloneImageWithinParagraph: false
     extensions:
       passthrough:
         delimiters:

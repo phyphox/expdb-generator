@@ -17,7 +17,7 @@ mkdir -p "../$I18NSRCDIR/generated"
 
 echo "PANDOC Processing $1 as $LOGID"
 
-pandoc --resource-path ".:../$I18NSRCDIR" --from markdown+tex_math_single_backslash --to native "content/$1" -o "$INTERMEDIATE.ast"
+pandoc --resource-path ".:../$I18NSRCDIR" --from markdown+tex_math_single_backslash+implicit_figures --to native "content/$1" -o "$INTERMEDIATE.ast"
 for ext in ${Only_Standalone_Output_Types}; do
     echo "$LOGID Generating $ext"
     pandoc --resource-path ".:../$I18NSRCDIR" --from native "$INTERMEDIATE.ast" --standalone --pdf-engine=lualatex -o "$OUTFILE.$ext"

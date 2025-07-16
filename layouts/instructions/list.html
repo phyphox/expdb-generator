@@ -1,10 +1,12 @@
 {{- define "main" -}}
-<h2>{{- i18n "overview" -}}&nbsp;{{- i18n "instructions" -}}</h2>
+<h1>{{- i18n "instructions" -}}</h1>
 
+<div class="filtercontrols">
 {{- partial "categories.html" . -}}
 {{- partial "levels.html" . -}}
 {{- partial "sensors.html" . -}}
 {{- partial "materials.html" . -}}
+</div>
 
 {{ $pages := where site.RegularPages "Type" "instructions" }}
 {{ $paginator := .Paginate $pages }}
@@ -14,17 +16,14 @@
     <p id="message">{{- i18n "showing" -}}&nbsp;<output>{{- .NumberOfElements -}}&nbsp;{{- i18n "instructions" -}}</output></p>
     {{- end -}}
 
-    <div aria-labelledby="message" role="region">
-        <ol class="instructions">
-            {{- range $paginator.Pages -}}
-            <li>
-                <h4><a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a></h4>
-                {{- .Date | time.Format ":date_medium" -}}&nbsp;-&nbsp;{{- i18n "version" -}}:&nbsp;{{- .Param "version" -}}<hr/>
-                <div class="summary"> {{- .Summary -}} </div>
-            </li>
-            {{- end -}}
-        </ol>
-    </div>
+    <ul class="instructions">
+        {{- range $paginator.Pages -}}
+        <li>
+            <h4><a href="{{ .RelPermalink }}">{{- .LinkTitle -}}</a></h4>
+            <div class="summary"> {{- .Summary -}} </div>
+        </li>
+        {{- end -}}
+    </ul>
 </div>
 
 {{- end -}}

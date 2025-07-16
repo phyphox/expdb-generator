@@ -1,8 +1,8 @@
 {{- define "main" -}}
   <h1>{{- .Params.Title -}}</h1>
-  <p>{{- .Params.Author -}},&nbsp; {{- .Date | time.Format ":date_medium" -}}</p>
+  <p>{{- i18n "writtenby" -}}&nbsp;{{- delimit .Params.Author ", " " and " -}}</p>
+  <div class="articleextra">
   {{- partial "download.html" -}}
-
   <br />
   {{- with .Params.tags -}}
   {{- i18n "tags" -}}:&nbsp;{{- delimit . ", " -}}
@@ -11,7 +11,7 @@
   {{- with .Params.categories -}}
   {{- i18n "categories" -}}:&nbsp;{{- delimit . ", " -}}
   {{- end -}}
+  </div>
 
-  <hr />
     {{- .Content -}}
 {{- end -}}
